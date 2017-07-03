@@ -94,6 +94,87 @@ html {
         }
     }
 
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    padding: 48px;
+    font-size: 0;
+    white-space: nowrap;
+    text-align: center;
+    background: rgba(51, 62, 80, 0.83);
+    transition: .4s;
+}
+
+    .modal::before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%;
+    }
+
+    .modal__dialog {
+        position: relative;
+        transform: translateY(-100px);
+        display: inline-block;
+        white-space: normal;
+        padding: 58px 74px;
+        font-size: 28px;
+        font-weight: bold;
+        text-align: left;
+        color: #333e50;
+        background-color: #fff;
+        transition: .4s;
+    }
+
+    .modal__close {
+        position: absolute;
+        top: 0;
+        left: 100%;
+        -webkit-appearance: none;
+           -moz-appearance: none;
+                appearance: none;
+        box-sizing: border-box;
+        padding: 0;
+        text-align: center;
+        border: 3px solid;
+        border-left: 0;
+        color: #9badb7;
+        background: 0;
+        transition: .2s;
+        cursor: pointer;
+    }
+
+        .modal__close::before {
+            content: "×";
+            display: inline-block;
+            vertical-align: top;
+            width: 36px;
+            height: 36px;
+            line-height: 36px;
+            text-transform: uppercase;
+        }
+
+        .modal__close:hover,
+        .modal__close:focus {
+            border-color: #e31e24;
+            color: #e31e24;
+            outline: 0;
+        }
+
+    .modal_show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+        .modal_show .modal__dialog {
+            transform: translateY(0);
+        }
+
 .logo {
     display: inline-block;
 }
@@ -850,6 +931,7 @@ html {
 
 .contacts-section {
     position: relative;
+    overflow: hidden;
     box-sizing: border-box;
     height: 674px;
     padding-top: 105px;
@@ -1035,7 +1117,8 @@ html {
         opacity: 0;
         visibility: hidden;
         box-sizing: border-box;
-        min-width: 192px;
+        max-width: 100%;
+        width: 192px;
         padding: 9px;
         font-size: 12px;
         white-space: nowrap;
@@ -1052,10 +1135,28 @@ html {
             right: 100%;
             margin: auto;
             border: 3px solid transparent;
-            border-left: 0;
             border-right-color: #fff;
             width: 0;
             height: 0;
+        }
+
+        @media (max-width: 1580px) {
+            .form-field__message {
+                position: relative;
+                top: auto;
+                left: auto;
+                margin: 9px 0 0;
+                width: auto;
+            }
+
+                .form-field__message::before {
+                    top: auto;
+                    bottom: 100%;
+                    right: auto;
+                    left: 16px;
+                    border-color: transparent;
+                    border-bottom-color: #fff;
+                }
         }
 
     .form-field_error {}

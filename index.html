@@ -703,7 +703,7 @@
 
                 <!-- BEGIN contacts-block__form -->
                 <div class="contacts-block__form">
-                    <form class="contacts-form">
+                    <form class="contacts-form" id="contacts-form">
                         <label class="form-field form-field_error">
                             <span class="form-field__label">ФИО</span>
                             <input class="form-field__control" type="text" />
@@ -734,6 +734,16 @@
         </div>
     </footer>
     <!-- END footer <-->
+
+
+    <!-- BEGIN modal -->
+    <div class="modal" id="form-message">
+        <div class="modal__dialog">
+            Заявка отправлена
+            <button class="modal__close" type="button"></button>
+        </div>
+    </div>
+    <!-- END modal -->
 
     <script src="js/jquery.min.js"></script>
     <script src="js/main.js"></script>
