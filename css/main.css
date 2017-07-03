@@ -996,6 +996,7 @@ html {
 
 .form-field {
     margin-bottom: 21px;
+    position: relative;
     display: block;
 }
 
@@ -1012,7 +1013,7 @@ html {
         height: 40px;
         padding: 0 12px;
         border: 0;
-        border-top: 4px solid #dbdbdb;
+        box-shadow: 0 4px rgba(0, 0, 0, 0.14) inset;
         background: #fff;
         resize: vertical;
     }
@@ -1024,6 +1025,49 @@ html {
         padding-top:    12px;
         padding-bottom: 12px;
     }
+
+    .form-field__message {
+        position: absolute;
+        top: 22px;
+        left: 100%;
+        margin: 0;
+        margin-left: 9px;
+        opacity: 0;
+        visibility: hidden;
+        box-sizing: border-box;
+        min-width: 192px;
+        padding: 9px;
+        font-size: 12px;
+        white-space: nowrap;
+        color: #e31e24;
+        background: #fff;
+        transition: .4s;
+    }
+
+        .form-field__message::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 100%;
+            margin: auto;
+            border: 3px solid transparent;
+            border-left: 0;
+            border-right-color: #fff;
+            width: 0;
+            height: 0;
+        }
+
+    .form-field_error {}
+
+        .form-field_error .form-field__message {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .form-field_error .form-field__control {
+            background-color: #f7bebf;
+        }
 
     @media (max-width: 1240px) {
         .contacts-section__marker {
