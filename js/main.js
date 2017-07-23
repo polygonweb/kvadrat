@@ -73,26 +73,26 @@
 		})
 
 
-	var contactsForm = document.getElementById('contacts-form');
-	var formMessage = document.getElementById('form-message');
+	// var contactsForm = document.getElementById('contacts-form');
+	// var formMessage = document.getElementById('form-message');
 
-	$(contactsForm).on('submit', function(e) {
-		$(formMessage).addClass('modal_show');
-		e.preventDefault();
-	});
+	// $(contactsForm).on('submit', function(e) {
+	// 	$(formMessage).addClass('modal_show');
+	// 	e.preventDefault();
+	// });
 
-	$('.modal').on('click', function(e) {
-		var modal = this;
-		var dialog = modal.querySelector('.modal__dialog');
-		var target = e.target;
-		if (!dialog.contains(target)) {
-			$(modal).removeClass('modal_show');
-		}
-	});
+	// $('.modal').on('click', function(e) {
+	// 	var modal = this;
+	// 	var dialog = modal.querySelector('.modal__dialog');
+	// 	var target = e.target;
+	// 	if (!dialog.contains(target)) {
+	// 		$(modal).removeClass('modal_show');
+	// 	}
+	// });
 
-	$('.modal__close').on('click', function(e) {
-		$(e.target)
-			.closest('.modal')
-			.removeClass('modal_show');
-	});
+	// $('.modal__close').on('click', function(e) {
+	// 	$(e.target)
+	// 		.closest('.modal')
+	// 		.removeClass('modal_show');
+	// });
 })(jQuery);

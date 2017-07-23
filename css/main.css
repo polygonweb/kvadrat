@@ -4,15 +4,52 @@
     width: device-width;
 }
 
-/* font-size: 14px*/
+/**
+ *
+ * Глобальные настройки наследуемых свойств
+ * font-size: 14px
+ */
 html {
-    font: 87.5%/1 'Roboto', BlinkMacSystemFont, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    font: 87.5%/1 "Roboto", BlinkMacSystemFont, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    color: #333e50;
 }
 
+
+/**
+ * Символ рубля
+ */
 .ruble-icon::before {
     content: "\20BD";
 }
 
+
+/**
+ * Подсказака
+ */
+.help-hint {
+    position: relative;
+    padding-left: 18px;
+}
+
+    .help-hint::before {
+        content: "?";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width:  14px;
+        height: 14px;
+        line-height: 14px;
+        font-size: 11px;
+        text-align: center;
+        color: #fff;
+        background: #adadad;
+        border-radius: 50%;
+    }
+
+
+/**
+ * Центрирующий контейнер
+ */
 .main-container {
     margin-left:  auto;
     margin-right: auto;
@@ -21,22 +58,247 @@ html {
     padding-right: 17px;
 }
 
+
+/**
+ * Строчная ссылка
+ */
+.text-link {
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+    color: #18587a;
+}
+
+    .text-link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-top: 1px solid #d91a14;
+        transition: .2s;
+    }
+
+    .text-link:hover::after {
+        opacity: 0;
+    }
+
+    .text-link_internal::after {
+        border-top-style: dashed;
+    }
+
+
+/**
+ * Кнопки
+ */
+.button {
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+    border: 3px solid #da221c;
+    font-size: 0;
+    text-align: center;
+    text-decoration: none;
+    color: #18587a;
+    background: transparent;
+    transition: .2s;
+    cursor: pointer;
+}
+
+    .button:hover {
+        color: #fff;
+        background-color: #da221c;
+    }
+
+    .button__icon,
+    .button__text {
+        vertical-align: middle;
+    }
+
+    .button__icon {
+        fill: currentColor;
+    }
+
+    .button__icon + .button__text {
+        margin-left: 4px;
+    }
+
+    .button_full {
+        width: 100%;
+    }
+
+    /* размеры кнопок */
+    .button_size_s {
+        line-height: 25px;
+    }
+
+        .button_size_s .button__text {
+            font-size: 14px;
+        }
+
+    .button_size_m {
+        line-height: 32px;
+    }
+
+        .button__text,
+        .button_size_m .button__text {
+            font-size: 16px;
+        }
+
+    .button_size_l {
+        line-height: 39px;
+    }
+
+        .button_size_l .button__text {
+            font-size: 20px;
+        }
+
+    .button_size_xl {
+        line-height: 46px;
+    }
+
+        .button_size_xl .button__text {
+            font-size: 24px;
+        }
+
+
+/**
+ * Поле ввода
+ */
+.form-field {
+    position: relative;
+    display: block;
+}
+
+    .form-field__label {
+        margin-bottom: 6px;
+        display: block;
+        font-size: 16px;
+    }
+
+    .form-field__control {
+        box-sizing: border-box;
+        max-width: 100%;
+        width: 100%;
+        height: 40px;
+        padding: 0 12px;
+        border: 1px solid #cdcdcd;
+        box-shadow: 0 3px rgba(0, 0, 0, 0.14) inset;
+        background: #fff;
+        resize: vertical;
+    }
+
+    textarea.form-field__control {
+        height:     130px;
+        min-height: 80px;
+        max-height: 130px;
+        padding-top:    12px;
+        padding-bottom: 12px;
+    }
+
+    .form-field__hint {
+        display: block;
+        vertical-align: top;
+        padding-top:    6px;
+        padding-bottom: 6px;
+    }
+
+    .form-field__message {
+        position: absolute;
+        top: 22px;
+        left: 100%;
+        margin: 0;
+        margin-left: 9px;
+        opacity: 0;
+        visibility: hidden;
+        box-sizing: border-box;
+        max-width: 100%;
+        width: 192px;
+        padding: 9px;
+        font-size: 12px;
+        white-space: nowrap;
+        color: #e31e24;
+        background: #fff;
+        transition: .4s;
+    }
+
+        .form-field__message::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 100%;
+            margin: auto;
+            border: 3px solid transparent;
+            border-right-color: #fff;
+            width: 0;
+            height: 0;
+        }
+
+        @media (max-width: 1580px) {
+            .form-field__message {
+                position: relative;
+                top: auto;
+                left: auto;
+                margin: 9px 0 0;
+                width: auto;
+            }
+
+                .form-field__message::before {
+                    top: auto;
+                    bottom: 100%;
+                    right: auto;
+                    left: 16px;
+                    border-color: transparent;
+                    border-bottom-color: #fff;
+                }
+        }
+
+    .form-field_error {}
+
+        .form-field_error .form-field__message {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .form-field_error .form-field__control {
+            background-color: #f7bebf;
+        }
+
+
+/**
+ * Список контролов с отступами
+ */
+.field-list {}
+
+    .field-list__item + .field-list__item {
+        margin-top: 26px;
+    }
+
+
+/**
+ * Табы
+ */
 .tabs {}
 
     .tabs-nav {
+        margin-bottom: 28px;
         display: table;
         border-collapse: collapse;
         table-layout: fixed;
+        box-sizing: border-box;
         border: 3px solid #e8e8e8;
     }
 
         .tabs-nav__item {
             display: table-cell;
             vertical-align: middle;
-            padding: 7px 20px 6px;
+            /*padding: 7px 20px 6px;*/
+            padding: 8px 20px;
+            text-align: center;
             font-size: 16px;
             text-decoration: none;
-            color: inherit;
+            color: #18587a;
         }
 
         .tabs-nav__text {
@@ -63,6 +325,10 @@ html {
 
         .tabs-nav__item_active .tabs-nav__text::after {
             background: none;
+        }
+
+        .tabs-nav_full {
+            width: 100%;
         }
 
     .tabs-content {}
@@ -94,21 +360,56 @@ html {
         }
     }
 
+
+/**
+ *  Модальные окна bootstrap
+ */
+.modal-open {
+    overflow: hidden;
+}
+
+.modal-scrollbar-measure {
+    position: absolute;
+    top: -9999px;
+    width: 50px;
+    height: 50px;
+    overflow: scroll;
+}
+
 .modal {
+    display: none;
     position: fixed;
+    z-index: 9;
     top: 0;
+    right: 0;
     bottom: 0;
     left: 0;
-    right: 0;
-    opacity: 0;
-    visibility: hidden;
-    padding: 48px;
-    font-size: 0;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
     white-space: nowrap;
     text-align: center;
-    background: rgba(51, 62, 80, 0.83);
-    transition: .4s;
+    font-size: 0;
+    outline: 0;
 }
+
+    .modal-backdrop {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 8;
+        background-color: rgba(51, 62, 80, 0.83);
+    }
+
+        .modal-backdrop.fade {
+            opacity: 0;
+            transition: .4s;
+        }
+
+            .modal-backdrop.fade.in {
+                opacity: 1;
+            }
 
     .modal::before {
         content: "";
@@ -117,63 +418,124 @@ html {
         height: 100%;
     }
 
-    .modal__dialog {
-        position: relative;
-        transform: translateY(-100px);
-        display: inline-block;
-        white-space: normal;
-        padding: 58px 74px;
-        font-size: 28px;
-        font-weight: bold;
-        text-align: left;
-        color: #333e50;
-        background-color: #fff;
-        transition: .4s;
-    }
-
-    .modal__close {
+    .modal .close {
         position: absolute;
         top: 0;
         left: 100%;
         -webkit-appearance: none;
            -moz-appearance: none;
                 appearance: none;
-        box-sizing: border-box;
+        box-sizing: content-box;
         padding: 0;
         text-align: center;
         border: 3px solid;
         border-left: 0;
+        width:  36px;
+        height: 36px;
         color: #9badb7;
         background: 0;
         transition: .2s;
         cursor: pointer;
     }
 
-        .modal__close::before {
-            content: "×";
-            display: inline-block;
-            vertical-align: top;
-            width: 36px;
-            height: 36px;
-            line-height: 36px;
-            text-transform: uppercase;
+        .modal .close::before,
+        .modal .close::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 5px;
+            height: 27px;
+            background: currentColor;
         }
 
-        .modal__close:hover,
-        .modal__close:focus {
+        .modal .close::before {
+            transform: skewX(34deg);
+        }
+
+        .modal .close::after {
+            transform: skewX(-34deg);
+        }
+
+        .modal .close:hover,
+        .modal .close:focus {
             border-color: #e31e24;
             color: #e31e24;
             outline: 0;
         }
 
-    .modal_show {
-        opacity: 1;
-        visibility: visible;
+    .modal-dialog {
+        margin: 48px;
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        white-space: normal;
+        font-size: 1rem;
+        font-size: 14px;
+        text-align: left;
+        transition: .4s;
     }
 
-        .modal_show .modal__dialog {
+    .modal-content {
+        box-sizing: border-box;
+        padding: 24px;
+        color: #333e50;
+        background-color: #fff;
+    }
+
+    .modal-header {}
+
+        .modal-title {
+            margin: 0;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+    .modal-body {
+        padding-top: 30px;
+    }
+
+    .modal-footer {
+        padding-top:    24px;
+        padding-bottom: 20px;
+    }
+
+    .modal.fade {
+        opacity: 0;
+        transition: opacity .4s;
+    }
+
+        .modal.fade.in {
+            opacity: 1;
+        }
+
+    .modal.fade .modal-dialog {
+        transform: translateY(-100px);
+    }
+
+        .modal.fade.in .modal-dialog {
             transform: translateY(0);
         }
+
+    .modal-open .modal {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+
+.auth-modal-dialog {
+    width: 400px;
+    vertical-align: top;
+}
+
+.modal-message {
+    padding: 35px 51px
+}
+
+
 
 .logo {
     display: inline-block;
@@ -1057,6 +1419,15 @@ html {
         background-color: #e31e24;
     }
 
+    .contacts-block__form .form-field {
+        margin-top: 0;
+        margin-bottom: 21px;
+    }
+
+    .contacts-block__form .form-field__control {
+        border: 0;
+    }
+
 .contacts-form {}
 
     .contacts-form__submit {
@@ -1074,100 +1445,6 @@ html {
 
         .contacts-form__submit:hover {
             background-color: #e8e8e8;
-        }
-
-.form-field {
-    margin-bottom: 21px;
-    position: relative;
-    display: block;
-}
-
-    .form-field__label {
-        margin-bottom: 6px;
-        display: block;
-        font-size: 16px;
-    }
-
-    .form-field__control {
-        box-sizing: border-box;
-        max-width: 100%;
-        width: 100%;
-        height: 40px;
-        padding: 0 12px;
-        border: 0;
-        box-shadow: 0 4px rgba(0, 0, 0, 0.14) inset;
-        background: #fff;
-        resize: vertical;
-    }
-
-    textarea.form-field__control {
-        height:     130px;
-        min-height: 80px;
-        max-height: 130px;
-        padding-top:    12px;
-        padding-bottom: 12px;
-    }
-
-    .form-field__message {
-        position: absolute;
-        top: 22px;
-        left: 100%;
-        margin: 0;
-        margin-left: 9px;
-        opacity: 0;
-        visibility: hidden;
-        box-sizing: border-box;
-        max-width: 100%;
-        width: 192px;
-        padding: 9px;
-        font-size: 12px;
-        white-space: nowrap;
-        color: #e31e24;
-        background: #fff;
-        transition: .4s;
-    }
-
-        .form-field__message::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            right: 100%;
-            margin: auto;
-            border: 3px solid transparent;
-            border-right-color: #fff;
-            width: 0;
-            height: 0;
-        }
-
-        @media (max-width: 1580px) {
-            .form-field__message {
-                position: relative;
-                top: auto;
-                left: auto;
-                margin: 9px 0 0;
-                width: auto;
-            }
-
-                .form-field__message::before {
-                    top: auto;
-                    bottom: 100%;
-                    right: auto;
-                    left: 16px;
-                    border-color: transparent;
-                    border-bottom-color: #fff;
-                }
-        }
-
-    .form-field_error {}
-
-        .form-field_error .form-field__message {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .form-field_error .form-field__control {
-            background-color: #f7bebf;
         }
 
     @media (max-width: 1240px) {
@@ -1231,3 +1508,62 @@ html {
 .copy {
     font-size: 14px;
 }
+
+.password-get {
+    margin-bottom: 5px;
+}
+
+    .password-get::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .password-get__control {
+        float: left;
+        width: 48%;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .password-get__info {
+        float: right;
+        width: 52%;
+        line-height: 1.27;
+    }
+
+
+
+/* ==========================================================================
+   CSS-утилиты
+   ========================================================================== */
+
+.text-align-left {
+    text-align: left;
+}
+
+.text-align-right {
+    text-align: right;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.text-small {
+    font-size: 86%;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+    .clearfix::after {
+        content: "";
+        display: table;
+        clear: both;
+    }

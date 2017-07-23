@@ -55,13 +55,13 @@
                 <!-- END main-menu -->
                 <!-- BEGIN user-menu -->
                 <div class="header__user-menu menu">
-                    <a class="menu__link" href="#404">
+                    <a class="menu__link" href="#register" data-toggle="modal">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 180 180">
                             <path d="M90 84.9a39.5 39.5 0 1 1 39.5-39.5A39.54 39.54 0 0 1 90 84.9zm0-69a29.5 29.5 0 1 0 29.5 29.5A29.53 29.53 0 0 0 90 15.9zM152.4 168.7H27.6a5 5 0 0 1-5-5 67.4 67.4 0 1 1 134.8 0 5 5 0 0 1-5 5zm-119.58-10h114.36a57.4 57.4 0 0 0-114.37 0z"/>
                         </svg>
                         <span class="menu__link-text">Регистрация</span>
                     </a>
-                    <a class="menu__link" href="#404">
+                    <a class="menu__link" href="#login" data-toggle="modal">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                             <path d="M16 1v6.5h-1V2H2v20h13v-5.5h1V23H1V1h15"/>
                             <path d="M23 12.5v-1H9.92l3.03-3.04-.7-.7L8.01 12l4.24 4.24.7-.7-3.03-3.04H23"/>
@@ -717,7 +717,7 @@
                             <span class="form-field__label">Опишите задачу  </span>
                             <textarea class="form-field__control" type="text"></textarea>
                         </label>
-                        <button class="contacts-form__submit" type="submit">Отправить заявку</button>
+                        <button class="contacts-form__submit" type="button" data-toggle="modal" data-target="#form-message">Отправить заявку</button>
                     </form>
                 </div>
                 <!-- END contacts-block__form -->
@@ -736,16 +736,178 @@
     <!-- END footer <-->
 
 
+
     <!-- BEGIN modal -->
-    <div class="modal" id="form-message">
-        <div class="modal__dialog">
-            Заявка отправлена
-            <button class="modal__close" type="button"></button>
+    <!-- Сообщение после отпрвки контактной формы -->
+    <div id="form-message" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть"></button>
+                    <h4 class="modal-title">
+                        <div class="modal-message">Заявка отправлена</div>
+                    </h4>
+                </div>
+            </div>
         </div>
     </div>
     <!-- END modal -->
 
-    <script src="js/jquery.min.js"></script>
+    <!-- BEGIN modal -->
+    <!--мод.окно логина -->
+    <div id="login" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog auth-modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть"></button>
+                    <h4 class="modal-title">Вход в личный кабинет</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="field-list">
+                        <div class="field-list__item">
+                            <label class="form-field">
+                                <span class="form-field__label">Номер телефона</span>
+                                <input class="form-field__control" type="text" />
+                            </label>
+                        </div>
+                        <div class="field-list__item">
+                            <label class="form-field">
+                                <span class="form-field__label">Пароль</span>
+                                <input class="form-field__control" type="password" />
+                                <small class="form-field__hint text-small text-align-right">
+                                    <a class="text-link" href="#">Забыли пароль</a>
+                                </small>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="button button_full button_size_xl" type="submit">
+                        <span class="button__text">Войти</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END modal -->
+
+
+    <!-- BEGIN modal -->
+    <!--мод.окно регистрации -->
+    <div id="register" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog auth-modal-dialog" role="document">
+            <form class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть"></button>
+                    <h4 class="modal-title">Регистрация</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="tabs">
+                        <div class="tabs-nav tabs-nav_full">
+                            <a class="tabs-nav__item tabs-nav__item_active" href="#">
+                                <span class="tabs-nav__text">Клиент</span>
+                            </a>
+                             <a class="tabs-nav__item" href="#">
+                                <span class="tabs-nav__text">Подрядчик</span>
+                            </a>
+                        </div>
+                        <div class="tabs-content">
+                            <!-- клиент -->
+                            <div class="tabs-content__pane tabs-content__pane_active">
+                                <div class="field-list">
+                                    <div class="field-list__item">
+                                        <label class="form-field">
+                                            <span class="form-field__label">Имя</span>
+                                            <input class="form-field__control" type="text" />
+                                        </label>
+                                    </div>
+                                    <div class="field-list__item">
+                                        <label class="form-field">
+                                            <span class="form-field__label">Телефон</span>
+                                            <input class="form-field__control" type="tel" />
+                                        </label>
+                                    </div>
+                                    <div class="field-list__item">
+                                        <label class="form-field">
+                                            <span class="form-field__label">Электронный адрес</span>
+                                            <input class="form-field__control" type="email" />
+                                        </label>
+                                    </div>
+                                    <div class="field-list__item">
+                                        <div class="password-get">
+                                            <div class="password-get__control">
+                                                <div>Пароль</div>
+                                                <a class="text-link text-link_internal" href="#">Получить пароль</a>
+                                            </div>
+                                            <div class="password-get__info">
+                                                <div class="help-hint text-small">Если Вы регистрируетесь впервые или забыли пароль, то получите пароль по SMS</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- подрядчик -->
+                            <div class="tabs-content__pane">
+                                 <div class="field-list">
+                                    <div class="field-list__item">
+                                        <label class="form-field">
+                                            <span class="form-field__label">Наименование организации</span>
+                                            <input class="form-field__control" type="text" />
+                                        </label>
+                                    </div>
+                                    <div class="field-list__item">
+                                        <label class="form-field">
+                                            <span class="form-field__label">Описание организации</span>
+                                            <textarea class="form-field__control"></textarea>
+                                        </label>
+                                    </div>
+                                     <div class="field-list__item">
+                                        <label class="form-field">
+                                            <span class="form-field__label">Телефон</span>
+                                            <input class="form-field__control" type="tel" />
+                                        </label>
+                                    </div>
+                                    <div class="field-list__item">
+                                        <label class="form-field">
+                                            <span class="form-field__label">Электронный адрес</span>
+                                            <input class="form-field__control" type="email" />
+                                        </label>
+                                    </div>
+                                    <div class="field-list__item">
+                                        <label class="form-field">
+                                            <span class="form-field__label">Пароль</span>
+                                            <input class="form-field__control" type="password" />
+                                            <small class="form-field__hint text-small text-align-right">
+                                                <a class="text-link text-link_internal" href="#">Выслать код повторно</a>
+                                            </small>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="button button_full button_size_xl" type="submit">
+                        <span class="button__text">Зарегистрироваться</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- END modal -->
+
+
+    <!-- BEGIN scripts -->
+    <script src="js/vendors/jquery.min.js"></script>
+
+    <!-- bootstrap plugins -->
+    <!-- <script src="js/vendors/transition.js"></script> -->
+    <!-- <script src="js/vendors/modal.js"></script> -->
+    <!-- <script src="js/vendors/tab.js"></script> -->
+    <script src="js/vendors/bootstrap.js"></script>
+
     <script src="js/main.js?v=0.2"></script>
+    <!-- END scripts -->
 </body>
 </html>
