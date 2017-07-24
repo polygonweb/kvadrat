@@ -4,6 +4,11 @@
     width: device-width;
 }
 
+html,
+body {
+    height: 100%;
+}
+
 /**
  *
  * Глобальные настройки наследуемых свойств
@@ -1532,6 +1537,322 @@ html {
         line-height: 1.27;
     }
 
+
+/* ==========================================================================
+   Структура страницы для личного кабинета
+   ========================================================================== */
+.account-page {
+    display: table;
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    background: #e8e8e8;
+}
+
+    .account-page__header,
+    .account-page__footer {
+        display: table-row;
+        height: 1px;
+        background: #fff;
+    }
+
+    .account-page__header {
+        line-height: 117px;
+        box-shadow: 0 25px 29px rgba(0, 0, 0, 0.08);
+    }
+
+    .account-page__footer {
+        line-height: 67px ;
+    }
+
+.account-footer {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+           -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+              -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+}
+
+    .account-footer__contacts {
+        order: 3;
+    }
+
+
+        .account-footer__contacts > * {
+            white-space: nowrap;
+            display: inline-block;
+            line-height: initial;
+        }
+
+    .account-footer__nav {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-align: center;
+        order: 2;
+    }
+
+        .account-footer__nav-item {
+            margin: 0 18px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+    .account-footer__copy {
+        margin-right: 40px;
+        order: 1;
+    }
+
+.footer-tel {
+    margin: 0 40px;
+    text-decoration: none;
+    color: inherit;
+    line-height: 1;
+}
+
+    .footer-tel svg {
+        position: relative;
+        top: -1px;
+        vertical-align: middle;
+        fill: #e31e24;
+    }
+
+    .footer-tel:hover {
+        color: #e31e24;
+    }
+
+    @media (max-width: 780px) {
+        .account-footer {
+                  -webkit-box-pack: center;
+           -webkit-justify-content: center;
+                     -ms-flex-pack: center;
+                   justify-content: center;
+        }
+
+        .account-footer__cell {
+            margin: 0 auto;
+            order: initial;
+            /*width: 50%;*/
+        }
+
+        .account-footer__copy {
+            text-align: center;
+            width: 100%;
+        }
+    }
+
+     @media (max-width: 620px) {
+        .account-footer__cell {
+            width: 100%;
+            text-align: center;
+        }
+     }
+
+     @media (max-width: 480px) {
+        .account-page__footer {
+            line-height: 50px;
+        }
+     }
+
+.account-header {}
+
+    .account-header::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .account-header__cell {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .account-header__user {
+        float: right;
+    }
+
+    .account-header__logo {
+        margin-right: 37px;
+        width: 79px;
+        height: auto;
+    }
+
+.account-user {}
+
+    .account-user__image {
+        margin-right: 6px;
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        object-fit: cover;
+        font-size: 58px;
+        width:  1em;
+        height: 1em;
+        background: #e8e8e8;
+        border-radius: 50%;
+    }
+
+    .account-user__info {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 1;
+    }
+
+    .account-user__name {
+        margin-bottom: 7px;
+    }
+
+.account-nav {
+    font-size: 0;
+    text-align: center;
+}
+
+    .account-nav__item {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        padding: 0 20px;
+        text-decoration: none;
+        transition: .2s;
+        white-space: nowrap;
+    }
+
+    .account-nav__item-inner {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 18px;
+        line-height: 1;
+    }
+
+    .account-nav__item-inner::before {
+        content: "";
+        margin: 0 auto 5px;
+        display: block;
+        width: 1.25em;
+        height: 1em;
+        font-size: 40px;
+        background: url("../img/menu-sprite.png") no-repeat;
+        background-size: 1.25em 4em;
+    }
+
+        @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+            .account-nav__item-inner::before {
+                background-image: url("../img/menu-sprite@2x.png");
+            }
+        }
+
+        .account-nav__item_projects .account-nav__item-inner::before { background-position: 0 0; }
+        .account-nav__item_contractors .account-nav__item-inner::before { background-position: 0 -1em; }
+        .account-nav__item_contacts .account-nav__item-inner::before { background-position: 0 -2em; }
+        .account-nav__item_settings .account-nav__item-inner::before { background-position: 0 -3em; }
+
+
+        .account-nav__item_active {
+            background: #e8e8e8;
+        }
+
+            .account-nav__item_active::after {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                margin: auto;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-color: transparent;
+                border-width: 9px 8px 0;
+                border-top-color: #e8e8e8;
+            }
+
+        .account-nav__item:hover {
+            background: #f2f2f2;
+        }
+
+            .account-nav__item:hover .text-link::after,
+            .account-nav__item_active .text-link::after {
+                opacity: 0;
+            }
+
+
+    @media (max-width: 1120px) {
+        .account-header {
+            line-height: 80px;
+        }
+
+        .account-header__logo {
+            width: 60px;
+        }
+
+        .account-nav__item-inner {
+            font-size: 14px;
+        }
+
+            .account-nav__item-inner::before {
+                font-size: 32px;
+            }
+
+        .account-user {
+            font-size: 12px;
+        }
+
+            .account-user__image {
+                font-size: 40px;
+            }
+
+            .account-user__name {
+                margin-bottom: 4px;
+            }
+    }
+
+    @media (max-width: 920px) {
+        .account-header {
+            line-height: initial;
+        }
+
+            .account-header__cell {
+                padding-top: 12px;
+            }
+
+        .account-nav {
+            width: 100%;
+            max-width: 100%;
+            overflow-y: hidden;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+            .account-nav__item {}
+
+            .account-nav__item-inner {
+                display: block;
+                height: 100%;
+                line-height: 50px;
+                white-space: nowrap;
+            }
+
+            .account-nav__item-inner::before,
+            .account-nav__item-inner .text-link {
+                display: inline-block;
+                vertical-align: middle;
+                line-height: 1;
+            }
+
+            .account-nav__item-inner::before {
+                margin-bottom: 0;
+                margin-right: 5px;
+            }
+    }
 
 
 /* ==========================================================================
