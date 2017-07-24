@@ -2,17 +2,16 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8">
-        <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-        <meta content="telephone=no" name="format-detection"/>
-        <meta content="address=no" name="format-detection"/>
-        <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport"/>
-        <link rel="icon" href="img/favicon.png" />
-        <title>Kvadrat - Найди своего подрядчика</title>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <meta content="address=no" name="format-detection"/>
+    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport"/>
+    <link rel="icon" href="img/favicon.png" />
+    <title>Kvadrat - Найди своего подрядчика</title>
 
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700,900i&subset=cyrillic-ext" />
-        <link rel="stylesheet" href="css/normalize.css" />
-        <link rel="stylesheet" href="css/main.css" />
-    </meta>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700,900i&subset=cyrillic-ext" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
     <!-- BEGIN account-page -->
@@ -58,7 +57,107 @@
         </div>
         <!-- END account-page__header -->
 
-        <div class="main-container">content</div>
+        <div class="main-container">
+            <!-- BEGIN account-content -->
+            <div class="account-content">
+                <div class="account-content-header">
+                    <h2 class="account-content-header__title">Настройки</h2>
+                    <div class="account-content-header__controls"></div>
+                </div>
+                <div class="account-content-main">
+                    <form class="account-settings-form">
+                        <div class="field-grid">
+                            <div class="field-grid__row">
+                                <div class="field-grid__cell">
+                                    <div class="fieldset__title">Личные данные</div>
+                                </div>
+                            </div>
+                            <div class="field-grid__row">
+                                <div class="field-grid__cell">
+                                    Имя
+                                </div>
+                                <div class="field-grid__cell">
+                                    <button type="button" class="edit-trigger" data-edit-target="name">
+                                        <span class="edit-trigger__value">Константин</span>
+                                    </button>
+                                    <div class="form-field" data-edit-selector="name">
+                                        <input class="form-field__control" type="text" name="" value="Константин">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field-grid__row">
+                                <div class="field-grid__cell">
+                                    Электронная адрес
+                                </div>
+                                <div class="field-grid__cell">
+                                    <button type="button" class="edit-trigger" data-edit-target="email">
+                                        <span class="edit-trigger__value">konstantin@yandex.ru</span>
+                                    </button>
+                                    <div class="form-field" data-edit-selector="email">
+                                        <input class="form-field__control" type="email" name="" value="konstantin@yandex.ru">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field-grid__row">
+                                <div class="field-grid__cell">
+                                    Номер телефона
+                                </div>
+                                <div class="field-grid__cell">
+                                    <button type="button" class="edit-trigger" data-edit-target="tel">
+                                        <span class="edit-trigger__value">+7 (922) 000-00-00</span>
+                                    </button>
+                                    <div class="form-field" data-edit-selector="tel">
+                                        <input class="form-field__control" type="tel" name="" value="+7 (922) 000-00-00">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field-grid__row">
+                                <div class="field-grid__cell">
+                                    <div class="fieldset__title">Пароль</div>
+                                </div>
+                                <div class="field-grid__cell">
+                                    <button type="button" class="edit-trigger" data-edit-target="password" data-edit-blocked>
+                                        <span class="edit-trigger__value">Изменить пароль</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="field-grid__row" data-edit-selector="password">
+                                <div class="field-grid__cell">
+                                    Новый пароль
+                                </div>
+                                <div class="field-grid__cell">
+                                    <div class="form-field">
+                                        <input class="form-field__control" type="text" name="" value="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field-grid__row" data-edit-selector="password">
+                                <div class="field-grid__cell">
+                                    Повторить пароль
+                                </div>
+                                <div class="field-grid__cell">
+                                    <div class="form-field">
+                                        <input class="form-field__control" type="text" name="" value="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field-grid__row">
+                                <div class="field-grid__cell"></div>
+                                <div class="field-grid__cell">
+                                    <button class="button button_wide button_size_l" type="submit">
+                                        <span class="button__text">Сохранить</span>
+                                    </button>
+                                    <button class="button button_simple button_size_l" type="reset">
+                                        <span class="button__text">Отменить</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- END account-content -->
+        </div>
 
         <!-- BEGIN account-page__footer -->
         <div class="account-page__footer">
@@ -90,5 +189,17 @@
         <!-- END account-page__footer -->
     </div>
     <!-- END account-page -->
+
+    <!-- BEGIN scripts -->
+    <script src="js/vendors/jquery.min.js"></script>
+
+    <!-- bootstrap plugins -->
+    <!-- <script src="js/vendors/transition.js"></script> -->
+    <!-- <script src="js/vendors/modal.js"></script> -->
+    <!-- <script src="js/vendors/tab.js"></script> -->
+    <script src="js/vendors/bootstrap.js"></script>
+
+    <script src="js/main.js"></script>
+    <!-- END scripts -->
 </body>
 </html>

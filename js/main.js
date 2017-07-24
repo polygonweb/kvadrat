@@ -1,5 +1,6 @@
 ;(function($) {
 
+	// анимация навигации по лендингу
 	$('.header__main-menu .menu__link').on('click', function(e) {
 		var hash = e.target.hash;
 		$('html, body').animate({
@@ -9,6 +10,7 @@
 	});
 
 
+	// аккордеон для подрядчиков на лендинге
 	$('.contractor').addClass('contractor_state_close');
 
 	$(document).on('click', '.contractor__btn', function(e) {
@@ -29,6 +31,7 @@
 	});
 
 
+	// компонент для табов
 	function Tabs(rootElement) {
 		this.DOM = {};
 		this.DOM.rootElement = rootElement;
@@ -73,26 +76,64 @@
 		})
 
 
-	// var contactsForm = document.getElementById('contacts-form');
-	// var formMessage = document.getElementById('form-message');
+	// редактируемые поля
+	;(function() {
 
-	// $(contactsForm).on('submit', function(e) {
-	// 	$(formMessage).addClass('modal_show');
-	// 	e.preventDefault();
-	// });
+		var $editButtons = $('[data-edit-target]');
+		if (!$editButtons.length) return;
 
-	// $('.modal').on('click', function(e) {
-	// 	var modal = this;
-	// 	var dialog = modal.querySelector('.modal__dialog');
-	// 	var target = e.target;
-	// 	if (!dialog.contains(target)) {
-	// 		$(modal).removeClass('modal_show');
-	// 	}
-	// });
+		$editButtons.closest('form').on('submit', function(e) {
+			e.preventDefault();
+		});
 
-	// $('.modal__close').on('click', function(e) {
-	// 	$(e.target)
-	// 		.closest('.modal')
-	// 		.removeClass('modal_show');
-	// });
+		$editButtons.each(function(index, editBtn) {
+			var $trigger = $(editBtn);
+			var isEditBlocked = editBtn.hasAttribute('data-edit-blocked');
+			var $triggerContent = $trigger.find('.edit-trigger__value');
+			var selector = $trigger.attr('data-edit-target');
+			var $fields = $('[data-edit-selector=' + selector + ']');
+			var $inputs = $fields.find('input');
+
+			// изначально скрываем связанные поля
+			$fields.hide();
+
+
+
+			$trigger.on('click', function(e) {
+				$trigger.hide();
+				$fields.show();
+				setTimeout(function() {
+					$inputs.first().focus();
+					$inputs.on('keyup', editEndHandler);
+				}, 100);
+			});
+
+			function editEndHandler(e) {
+				if (e.keyCode !== 13) return;
+				if (!isEditBlocked) {
+					$triggerContent.text(e.target.value);
+				};
+				$fields.hide();
+				$trigger.show();
+				$inputs.off('keyup', editEndHandler);
+			}
+
+		});
+
+
+		// $(document).on('keyup', function(e) {
+		// 	if (e.keyCode !== 13 && e.type === 'keyup') return;
+		// 	if ($(e.target).closest('.editable-field__trigger').length > 0 && e.type == 'focusout') return;
+
+		// 	var $target = $(e.target).closest('.editable-field input');
+		// 	if (!$target.length) return;
+		// 	var $field = $target.closest('.editable-field');
+		// 	if ($field.length > 0) {
+		// 		$field.removeClass('editable-field_is-edit');
+		// 		$field.find('.editable-field__value').text($target.val());
+		// 		$field.closest('form').off('submit', stopForm);
+		// 	}
+		// });
+	})();
+
 })(jQuery);
