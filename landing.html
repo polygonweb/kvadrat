@@ -31,7 +31,7 @@
                     </svg>
                     +7 (342) 200-00-00
                 </a>
-                <a class="contact-link  contact-link_call" href="#404">
+                <a class="contact-link contact-link_call" href="#call-modal" data-toggle="modal">
                     Заказать звонок
                 </a>
             </div>
@@ -736,6 +736,41 @@
     </footer>
     <!-- END footer <-->
 
+
+    <!-- BEGIN modal -->
+    <!-- заказ обратного звонка -->
+    <div id="call-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog auth-modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть"></button>
+                    <h4 class="modal-title">Заказ обратного звонка</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="field-list">
+                        <div class="field-list__item">
+                            <label class="form-field">
+                                <span class="form-field__label">Имя</span>
+                                <input class="form-field__control" type="text" />
+                            </label>
+                        </div>
+                        <div class="field-list__item">
+                            <label class="form-field">
+                                <span class="form-field__label">Телефон</span>
+                                <input class="form-field__control" type="password" />
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="button button_full button_size_xl" type="submit">
+                        <span class="button__text">Перезвонить мне</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END modal -->
 
 
     <!-- BEGIN modal -->

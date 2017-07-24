@@ -500,12 +500,11 @@ html {
         }
 
     .modal-body {
-        padding-top: 30px;
+        padding-top: 32px;
     }
 
     .modal-footer {
-        padding-top:    24px;
-        padding-bottom: 20px;
+        padding-top: 32px;
     }
 
     .modal.fade {
