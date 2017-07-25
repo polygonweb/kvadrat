@@ -123,6 +123,8 @@ html {
     }
 
     .button__icon {
+        position: relative;
+        top: -2px;
         fill: currentColor;
     }
 
@@ -147,6 +149,20 @@ html {
                 bottom: 0;
                 border-bottom: 1px dashed #d91a14;
             }
+
+    .button_light {
+        border-color: #c2c2c2;
+        border-width: 2px;
+        padding-top:    1px;
+        padding-bottom: 1px;
+        background-color: #fff;
+        font-weight: normal;
+    }
+
+        .button_light:hover {
+            color: inherit;
+            background: #f2f2f2;
+        }
 
     .button_full {
         width: 100%;
@@ -190,6 +206,87 @@ html {
         .button_size_xl .button__text {
             font-size: 24px;
         }
+
+
+/**
+ * Чекбоксы и радиобатоны
+ */
+.control {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+    .control__input {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .control__icon {
+        position: relative;
+        display: block;
+        box-sizing: border-box;
+        width: 21px;
+        height: 21px;
+        border: 1px solid #cdcdcd;
+        box-shadow: 0 3px rgba(0, 0, 0, 0.14) inset;
+        background: #fff;
+    }
+
+        .control__icon::before {
+            content: "";
+            position: absolute;
+            opacity: 0;
+            color: #18587a;
+            transition: .2s;
+        }
+
+        .control__input:checked + .control__icon,
+        .control__input:focus + .control__icon {
+            border-color: #d91a14;
+            box-shadow: 0 0 0 1px #d91a14 inset;
+        }
+
+        .control__input:checked + .control__icon::before {
+            opacity: 1;
+        }
+
+    .control_type_checkbox .control__icon::before {
+        left: 10px;
+        /*bottom: 6px;*/
+        bottom: 10px;
+        width: 6px;
+        height: 20px;
+        border-style: solid;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+    }
+
+        .control_type_checkbox .control__input:checked + .control__icon::before {
+            bottom: 6px;
+        }
+
+    .control_type_radio .control__icon {
+        border-radius: 50%;
+    }
+    .control_type_radio .control__icon::before {
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        font-size: 9px;
+        width:  1em;
+        height: 1em;
+        border-radius: 50%;
+        background: currentColor;
+    }
 
 
 /**
@@ -396,12 +493,19 @@ html {
     }
 
         .field-grid__cell:first-child {
-            padding-right: 80px;
+            /*padding-right: 80px;*/
+            padding-right: 30px;
             padding-top: 12px;
         }
 
         .field-grid__cell_shrink {
             width: 1px;
+        }
+
+        .field-grid__cell_reset,
+        .field-grid__cell_reset:first-child {
+            padding-top: 0;
+            padding-right: 0;
         }
 
     @media (max-width: 768px) {
@@ -683,6 +787,150 @@ html {
     padding: 35px 51px
 }
 
+
+/**
+ * Навигация в виде табов
+ */
+.sub-nav {
+    margin: 0 0 42px;
+    padding: 0;
+    list-style: none;
+    box-shadow: 0 -1px #c2c2c2 inset;
+}
+
+    .sub-nav::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .sub-nav__item {
+        float: left;
+    }
+
+        .sub-nav__item:not(:last-of-type) {
+            margin-right: 32px;
+        }
+
+    .sub-nav__link {
+        display: block;
+        padding: 8px;
+        font-size: 20px;
+        text-decoration: none;
+        color: inherit;
+    }
+
+        .sub-nav__link:hover {
+            color: #18587a;
+        }
+
+        .sub-nav__item.active .sub-nav__link {
+            color: #d91a14;
+            font-weight: bold;
+            box-shadow: 0 -3px inset;
+        }
+
+.sub-nav-content {}
+
+    .sub-nav-content__pane {
+        display: none;
+    }
+
+        .sub-nav-content__pane.active {
+            display: block;
+            animation: showNavItem .7s;
+        }
+
+        @keyframes showNavItem {
+            0% { opacity: 0; }
+        }
+
+    @media (max-width: 420px) {
+        .sub-nav {
+            margin-bottom: 24px;
+        }
+
+            .sub-nav__link {
+                font-size: 16px;
+            }
+    }
+
+/**
+ * Счетчик
+ */
+.count {
+    display: inline-block;
+    padding: 0 8px;
+    font-size: 10px;
+    line-height: 13px;
+    border-radius: 9999px;
+    color: #fff;
+    background-color: #d91a14;
+}
+
+/**
+ * Боковая навигация
+ */
+.side-nav {
+    margin: 0;
+    padding: 2px 0 6px;
+    list-style: none;
+    font-size: 16px;
+    background: #fff;
+}
+
+    .side-nav__item {
+        color: #18587a;
+    }
+
+    .side-nav__link {
+        padding: 14px 16px;
+        display: block;
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+        transition: .2s;
+    }
+
+        .side-nav__link:hover {
+            background-color: rgba(24, 88, 122, 0.08);
+        }
+
+    .side-nav__text {
+        position: relative;
+        background: linear-gradient(90deg, #d91a14, #d91a14) repeat-x left 0 bottom 1px / 100% 1px;
+    }
+
+        .side-nav__item_active {
+            color: #333e50;
+        }
+
+        .side-nav__item_active .side-nav__text {
+            font-weight: bold;
+            background: 0;
+        }
+
+    .side-nav__count {
+        margin-left: 8px;
+        float: right;
+    }
+
+    @media (max-width: 768px) {
+        .side-nav {
+            padding: 0;
+        }
+
+            .side-nav__item {
+                display: inline-block;
+                vertical-align: top;
+            }
+    }
+
+    @media (max-width: 420px) {
+        .side-nav {
+            font-size: 14px;
+        }
+    }
 
 
 .logo {
@@ -1796,7 +2044,6 @@ html {
         .account-footer__cell {
             margin: 0 auto;
             order: initial;
-            /*width: 50%;*/
         }
 
         .account-footer__copy {
@@ -1812,7 +2059,7 @@ html {
         }
      }
 
-     @media (max-width: 480px) {
+     @media (max-width: 780px) {
         .account-page__footer {
             line-height: 50px;
         }
@@ -2109,7 +2356,7 @@ html {
     }
 
 /**
- * Сайдбар сос псиском контактов
+ * Сайдбар со списком контактов
  */
 .acc-contacts-side {
     min-height: 100%;
@@ -2124,6 +2371,7 @@ html {
         padding: 20px 24px;
         border-top: 1px solid #e8e8e8;
     }
+
 
 /**
  * История сообщений
@@ -2158,6 +2406,10 @@ html {
         background: #e8e8e8;
         border-radius: 50%;
     }
+
+        .message__img:only-child {
+            float: none;
+        }
 
     .message__body {
         display: block;
@@ -2197,7 +2449,7 @@ html {
         }
 
     /* сообщение администратора в диалоге */
-    .message:nth-of-type(even) {
+    .message_answer {
         text-align: right;
     }
 
@@ -2206,15 +2458,262 @@ html {
             float: right;
         }
 
+    .message_single {
+        font-size: 12px;
+    }
+
+        .message_single .message__body {
+            padding-top: 13px;
+        }
+
+        .message_single .message__img {
+            width:  34px;
+            height: 34px;
+        }
+
+        .message_single .message__user {
+            margin-bottom: 0;
+            float: left;
+            font-weight: normal;
+        }
+
+        .message_single .message__date {
+            float: right;
+        }
+
+        .message_single .message__text {
+            clear: both;
+            padding-top: 48px;
+            line-height: 1.67;
+        }
+
+            .message_single .message__text p {
+                margin: 0;
+            }
+
+                .message_single .message__text p + p {
+                    margin-top: 16px;
+                }
+
+        @media (max-width: 480px) {
+            .message_single .message__date,
+            .message_single .message__user {
+                float: none;
+            }
+
+            .message_single .message__date {
+                margin-top: 6px;
+            }
+
+            .message_single .message__text {
+                padding-top: 16px;
+            }
+        }
+
 /**
  * Форма связи
  */
-.account-contacts-form {
+.contacts-form {
     box-sizing: border-box;
-    padding: 42px 16px 0;
+    padding: 24px 16px 0;
     min-height: 100%;
     background: #fff;
 }
+
+
+/* Сообщения. Подрядчики
+   ========================================================================== */
+
+.contractors-mail {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+
+    .contractors-mail__side,
+    .contractors-mail__main {
+        display: table-cell;
+        vertical-align: top;
+    }
+
+    .contractors-mail__side {
+        padding-right: 13px;
+        width: 214px;
+    }
+
+.contractors-mail-toolbar {
+    margin-bottom: 10px;
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+}
+
+    .contractors-mail-toolbar__part {
+        margin: 0 -4px;
+        font-size: 0;
+    }
+
+        .contractors-mail-toolbar__part > * {
+            margin: 4px;
+            vertical-align: middle;
+            font-size: 14px;
+            font-size: 1rem;
+        }
+
+    .contractors-mail-toolbar__left {
+        float: left;
+    }
+
+    .contractors-mail-toolbar__right {
+        float: right;
+    }
+
+    @media (max-width: 620px) {
+       /* .contractors-mail-toolbar__part {
+            float: none;
+        }*/
+
+        .contractors-mail-toolbar__left .button__text {
+            display: none;
+        }
+    }
+
+.contractors-mail-list {
+    margin-bottom: 22px;
+}
+
+    .contractors-mail-list__item + .contractors-mail-list__item {
+        margin-top: 2px;
+    }
+
+@media (max-width: 768px) {
+    .contractors-mail,
+    .contractors-mail__side,
+    .contractors-mail__main {
+        display: block;
+    }
+
+    .contractors-mail__side {
+        margin-bottom: 13px;
+        padding: 0;
+        width: auto;
+    }
+}
+
+.message-preview {
+    position: relative;
+    background: #fff;
+}
+
+    .message-preview_unread {
+        font-weight: bold;
+    }
+
+    .message-preview__control {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        padding: 0;
+        width: 48px;
+        line-height: 50px;
+        text-align: center;
+    }
+
+    .message-preview__content {
+        padding-left: 48px;
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        transition: .2s;
+    }
+
+        .message-preview__content:hover,
+        .message-preview_checked {
+            background: #f8fcfe;
+        }
+
+    .message-preview__main {
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+        height: 50px;
+        border-collapse: collapse;
+        white-space: nowrap;
+    }
+
+    .message-preview__user {
+        width: 300px;
+        padding: 0 5px;
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .message-preview__user-image {
+        margin-right: 8px;
+        float: left;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+    }
+
+    .message-preview__user-name {
+        display: block;
+        padding: 9px 0 0;
+        width: auto;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+
+    .message-preview__theme {
+        padding: 0 10px;
+        display: table-cell;
+        vertical-align: middle;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .message-preview__date {
+        padding: 0 17px;
+        width: 48px;
+        display: table-cell;
+        vertical-align: middle;
+        font-size: 12px;
+        font-weight: normal;
+        color: #b0b0b0;
+    }
+
+    @media (max-width: 920px) {
+        .message-preview__main,
+        .message-preview__user,
+        .message-preview__theme,
+        .message-preview__date {
+            display: block;
+            width: auto;
+            height: auto;
+            padding: 0;
+            white-space: normal;
+        }
+
+        .message-preview__main {
+            padding: 16px 0;
+        }
+
+        .message-preview__theme {
+            margin-top: 12px;
+            line-height: 1.3;
+        }
+
+        .message-preview__date {
+            margin-top: 12px;
+        }
+
+        .message-preview__user {
+            overflow: hidden;
+        }
+
+    }
 
 
 /* ==========================================================================

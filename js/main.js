@@ -136,4 +136,16 @@
 		// });
 	})();
 
+	// подсветка выбранного элемента в списке сообщений
+	;(function() {
+		var $list = $('.contractors-mail-list');
+		if (!$list.length) return;
+
+		$list.on('change', function(e) {
+			var target = e.target;
+			var action = target.checked ? 'add' : 'remove';
+			$(target).closest('.message-preview')[action + 'Class']('message-preview_checked');
+		})
+	})();
+
 })(jQuery);
