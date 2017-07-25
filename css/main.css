@@ -222,7 +222,7 @@ html {
     textarea.form-field__control {
         height:     130px;
         min-height: 80px;
-        max-height: 130px;
+        /*max-height: 130px;*/
         padding-top:    12px;
         padding-bottom: 12px;
     }
@@ -381,19 +381,48 @@ html {
     border-collapse: collapse;
 }
 
+    .field-grid_full {
+        width: 100%;
+    }
+
     .field-grid__row {
         display: table-row;
     }
 
     .field-grid__cell {
         display: table-cell;
+        vertical-align: top;
         padding-bottom: 24px;
     }
 
         .field-grid__cell:first-child {
-            padding-right: 16px;
+            padding-right: 80px;
             padding-top: 12px;
         }
+
+        .field-grid__cell_shrink {
+            width: 1px;
+        }
+
+    @media (max-width: 768px) {
+        .field-grid,
+        .field-grid__row,
+        .field-grid__cell {
+            display: block;
+        }
+
+        .field-grid__cell {
+            width: auto;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+            .field-grid__cell:first-child {
+                padding-right: 0;
+                padding-bottom: 12px;
+            }
+
+    }
 
 
 /**
@@ -1487,6 +1516,14 @@ html {
                 color: #e31e24;
             }
 
+    .contacts-list_light {
+        margin-bottom: 28px;
+    }
+
+        .contacts-list_light .contacts-list__link:not(:hover) svg {
+            fill: #b2b2b2;
+        }
+
     .social-list {
         font-size: 0;
     }
@@ -1532,6 +1569,10 @@ html {
             fill: currentColor;
             stroke: currentColor;
         }
+
+        .social-list__item.vk:not(:hover) { background: #4a739f; }
+        .social-list__item.fb:not(:hover) { background: #3b579d; }
+        .social-list__item.ok:not(:hover) { background: #f58220; }
 
     .contacts-block__form {
         color: #fff;
@@ -1994,6 +2035,29 @@ html {
         float: right;
     }
 
+    @media (max-width: 1120px) {
+        .account-content {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .account-content-header__title {
+            font-size: 32px;
+        }
+    }
+
+     @media (max-width: 920px) {
+
+        .account-content-header {
+            padding-top:    16px;
+            padding-bottom: 16px;
+        }
+
+        .account-content-header__title {
+            font-size: 28px;
+        }
+    }
+
 
 /* Настройки аккаунта
    ========================================================================== */
@@ -2007,6 +2071,150 @@ html {
     .account-settings-form .field-grid__cell:first-child {
         padding-right: 80px;
     }
+
+
+/* Раздел "Связаться с нами"
+   ========================================================================== */
+
+.account-contacts {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+
+    .account-contacts__main,
+    .account-contacts__side {
+        display: table-cell;
+        vertical-align: top;
+    }
+
+    .account-contacts__side {
+        padding-left: 20px;
+        width: 282px;
+        flex: 0 0 auto;
+    }
+
+    @media (max-width: 920px) {
+        .account-contacts,
+        .account-contacts__main,
+        .account-contacts__side {
+            display: block;
+        }
+
+        .account-contacts__side {
+            margin-top: 20px;
+            padding-left: 0;
+            width: auto;
+        }
+    }
+
+/**
+ * Сайдбар сос псиском контактов
+ */
+.acc-contacts-side {
+    min-height: 100%;
+    background: #fff;
+}
+
+    .acc-contacts-side__body {
+        padding: 24px;
+    }
+
+    .acc-contacts-side__foot {
+        padding: 20px 24px;
+        border-top: 1px solid #e8e8e8;
+    }
+
+/**
+ * История сообщений
+ */
+.dialog {
+    padding: 16px;
+    background: #fff;
+}
+
+    .dialog + .dialog {
+        margin-top: 8px;
+    }
+
+    .dialog__title {
+        margin: 0;
+        padding: 5px 0 14px;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+.message {
+    padding: 16px 0;
+    border-top: 1px solid #e8e8e8;
+    overflow: hidden;
+}
+
+    .message__img {
+        margin: 0 9px;
+        float: left;
+        width: 44px;
+        height: 44px;
+        background: #e8e8e8;
+        border-radius: 50%;
+    }
+
+    .message__body {
+        display: block;
+        overflow: hidden;
+        width: auto;
+        padding: 15px 0;
+    }
+
+    .message__user {
+        margin-bottom: 8px;
+        font-weight: bold;
+    }
+
+    .message__text {
+        margin-bottom: 20px;
+        line-height: 1.3;
+    }
+
+    .message__date {
+        font-size: 12px;
+        color: #b0b0b0;
+    }
+
+    .message:first-of-type {
+        border-top: 0;
+    }
+
+    .message + .message {
+        margin-top: 8px;
+    }
+
+    /* сообщение пользователя в диалоге */
+    .message:nth-of-type(odd) {}
+
+        .message:nth-of-type(odd) .message__img {
+            margin-left: 0;
+        }
+
+    /* сообщение администратора в диалоге */
+    .message:nth-of-type(even) {
+        text-align: right;
+    }
+
+        .message_answer .message__img {
+            margin-right: 0;
+            float: right;
+        }
+
+/**
+ * Форма связи
+ */
+.account-contacts-form {
+    box-sizing: border-box;
+    padding: 42px 16px 0;
+    min-height: 100%;
+    background: #fff;
+}
 
 
 /* ==========================================================================
