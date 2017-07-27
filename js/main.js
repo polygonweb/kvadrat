@@ -148,4 +148,27 @@
 		})
 	})();
 
+	// подсветка выбранного элемента в списке предложений
+	;(function() {
+		var $list = $('.proposal-list');
+		if (!$list.length) return;
+
+		$list.on('change', function(e) {
+			var target = e.target;
+			var action = target.checked ? 'add' : 'remove';
+			$(target).closest('.proposal')[action + 'Class']('proposal_checked');
+		})
+	})();
+
+	// соврачивание блоков в таблицах
+	(function() {
+		if (!$('.data-grid__toggle-btn').length) return;
+
+		$(document).on('click', '.data-grid__toggle-btn', function(e) {
+			$(this)
+				.closest('.data-grid__item')
+				.toggleClass('data-grid__item_close');
+		});
+	})();
+
 })(jQuery);

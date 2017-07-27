@@ -72,24 +72,19 @@ html {
     color: inherit;
     text-decoration: none;
     color: #18587a;
+    background-position: 0 100%;
+    background-size: 100% 1px;
+    background-repeat: repeat-x;
+    background-image: linear-gradient(90deg, #d91a14, #d91a14);
 }
 
-    .text-link::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        border-top: 1px solid #d91a14;
-        transition: .2s;
+    .text-link:hover {
+        background-image: none;
     }
 
-    .text-link:hover::after {
-        opacity: 0;
-    }
-
-    .text-link_internal::after {
-        border-top-style: dashed;
+    .text-link_internal {
+        background-size: 6px 1px;
+        background-image: linear-gradient(90deg, #d91a14 3px, transparent 0);
     }
 
 
@@ -127,6 +122,10 @@ html {
         top: -2px;
         fill: currentColor;
     }
+
+        .button__icon_add {
+            top: -1px;
+        }
 
     .button__icon + .button__text {
         margin-left: 4px;
@@ -297,6 +296,10 @@ html {
     display: block;
 }
 
+    .form-field_inline {
+        display: inline-block;
+    }
+
     .form-field__label {
         margin-bottom: 6px;
         display: block;
@@ -315,6 +318,12 @@ html {
         background: #fff;
         resize: vertical;
     }
+
+        .form-field__control_date {
+            background-image: url("../img/icon-date.png");
+            background-repeat: no-repeat;
+            background-position: top 50% right 7px;
+        }
 
     textarea.form-field__control {
         height:     130px;
@@ -392,6 +401,14 @@ html {
         .form-field_error .form-field__control {
             background-color: #f7bebf;
         }
+
+/**
+ * Placeholder
+ */
+::-webkit-input-placeholder { font-size: 12px; color: #b6b8bd; }
+::-moz-placeholder          { font-size: 12px; color: #b6b8bd; }/* Firefox 19+ */
+:-moz-placeholder           { font-size: 12px; color: #b6b8bd; }/* Firefox 18- */
+:-ms-input-placeholder      { font-size: 12px; color: #b6b8bd; }
 
 
 /**
@@ -722,6 +739,7 @@ html {
 
     .modal-dialog {
         margin: 48px;
+        max-width: 100%;
         position: relative;
         display: inline-block;
         vertical-align: middle;
@@ -781,6 +799,10 @@ html {
 .auth-modal-dialog {
     width: 400px;
     vertical-align: top;
+}
+
+.new-order-dialog {
+    width: 622px;
 }
 
 .modal-message {
@@ -931,6 +953,478 @@ html {
             font-size: 14px;
         }
     }
+
+
+/**
+ * Таблицы с данными
+ */
+.data-grid {
+    display: table;
+    /*table-layout: fixed;*/
+    /*border-collapse: collapse;*/
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    font-size: 12px;
+    line-height: 1.67;
+}
+
+    .data-grid__cell {
+        display: table-cell;
+        vertical-align: top;
+        padding: 12px 16px;
+        /*padding: 8px 16px;*/
+        background: #fff;
+    }
+
+        .data-grid__cell_head {
+            vertical-align: top;
+            text-align: left;
+            font-weight: bold;
+            background: 0;
+        }
+
+        .data-grid__cell_align_top {
+            vertical-align: top;
+        }
+
+    .data-grid__head {
+        display: table-header-group;
+        line-height: 1.25;
+    }
+
+    .data-grid__item {
+        position: relative;
+        display: table-row-group;
+        transition: box-shadow .2s;
+    }
+
+        .data-grid__item:not(:first-of-type)::before {
+            content: "";
+            display: table-row;
+            height: 8px;
+            line-height: 8px;
+        }
+
+        .data-grid__item:hover {
+            box-shadow: 0 9px 21px rgba(0, 0, 0, 0.33);
+            transition: box-shadow .2s;
+            cursor: pointer;
+        }
+
+    .data-grid__row {
+        display: table-row;
+    }
+
+        .data-grid__row_child .data-grid__cell {
+            background-color: #f8fcfe;
+        }
+
+        .data-grid__row_child:not(:last-of-type) .data-grid__cell {
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+/**
+ * Кнопка сворачивания-разворачивания (аккоредоны, строки таблицы и пр. )
+ */
+.data-grid__toggle-btn {
+    position: relative;
+    display: inline-block;
+    box-sizing: content-box;
+    padding: 0;
+    font-size: 35px;
+    width: 1em;
+    height: 1em;
+    line-height: 1em;
+    text-align: center;
+    border: 2px solid;
+    background: #fff;
+    color: #e8e8e8;
+    cursor: pointer;
+    transition: .2s;
+}
+
+    .data-grid__toggle-btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 0;
+        height: 0;
+        display: inline-block;
+        border: 8px solid transparent;
+        border-bottom-color: currentColor;
+        border-top: 0;
+    }
+
+    .data-grid__toggle-btn:hover {
+        color: #d91a14;
+    }
+
+    .data-grid__item_close .data-grid__toggle-btn {
+        background-color: currentColor;
+    }
+
+        .data-grid__item_close .data-grid__toggle-btn::before {
+            border-bottom: 0;
+            border-top: 8px solid #fff;
+        }
+
+    .data-grid__item_close .data-grid__row_child {
+        display: none;
+    }
+
+
+/**
+ * Выпадающие блоки
+ */
+.drop {
+    position: relative;
+    display: inline-block;
+}
+
+    .drop__trigger {
+        cursor: pointer;
+    }
+
+        .drop__trigger::after {
+            content: "";
+            margin-left: 3px;
+            display: inline-block;
+            width: 11px;
+            height: 7px;
+            background: url("../img/icon-arrow.png") no-repeat;
+            transition: .3s;
+        }
+
+        .drop__trigger .status-icon {
+            vertical-align: middle;
+        }
+
+    .drop__content {
+        position: absolute;
+        z-index: 1;
+        margin-top: 8px;
+        transform: translateY(20px);
+        opacity: 0;
+        visibility: hidden;
+        min-width: 100%;
+        background: #fff;
+        box-shadow: 0 3px 16px rgba(0, 0, 0, 0.4);
+    }
+
+        .drop__content::after {
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            left: 40px;
+            border: 6px solid transparent;
+            border-bottom-color: #fff;
+        }
+
+        .drop__content::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            font-size: 20px;
+            top:    -1em;
+            bottom: -1em;
+            left:   -1em;
+            right:  -1em;
+        }
+
+    .drop:hover .drop__content,
+    .drop_open .drop__content {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        transition: .3s;
+    }
+
+    .drop:hover .drop__trigger::after {
+        transform: rotate(-180deg)
+    }
+
+    .drop_pos_right .drop__content {
+        right: 0;
+    }
+
+        .drop_pos_right .drop__content::after {
+            right: 40px;
+            left: auto;
+        }
+
+
+/**
+ * Cтатусы заявок
+ */
+.status-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    white-space: nowrap;
+}
+
+    .status-list__item {}
+
+    .status-list__link {
+        display: block;
+        padding: 6px 10px;
+        line-height: 20px;
+        color: inherit;
+        text-decoration: none;
+        transition: .2s;
+    }
+
+        .status-list__link:hover {
+            background-color: rgba(24, 88, 122, 0.08);
+        }
+
+/* Иконки статусов */
+.status-icon {
+    position: relative;
+    display: inline-block;
+    vertical-align: bottom;
+    font-size: 20px;
+    width: 1em;
+    height: 1em;
+    background: url("../img/status-sprite.png") no-repeat;
+}
+
+    .status-icon_accepted  { background-position: 0 0;    }
+    .status-icon_processed { background-position: 0 -1em; }
+    .status-icon_done      { background-position: 0 -2em; }
+
+
+/**
+ * Список тегов
+ */
+.tags {
+    margin: 0;
+    padding: 0;
+    display: inline;
+    list-style: none;
+}
+
+    .tags__item {
+        margin-bottom: 5px;
+        margin-right: 2px;
+        display: inline;
+    }
+
+.tag {
+    display: inline-block;
+    padding: 0 9px;
+    line-height: 1.67;
+    border-radius: 9999px;
+    background: #e8e8e8;
+}
+
+
+/**
+ * Блоки с файлами
+ */
+.file-list {
+    margin: 0;
+    padding: 8px 30px 5px 5px;
+    list-style: none;
+}
+
+    .file-list__item {
+        padding: 5px;
+    }
+
+    .file-list_inline .file-list__item {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+.file {
+    position: relative;
+    padding-top: 2px;
+    padding-left: 32px;
+    min-height: 34px;
+    display: block;
+    background: none no-repeat 0 0;
+    font-size: 12px;
+    line-height: 1.33;
+}
+
+    .file__name {}
+
+    .file__meta {
+        display: block;
+        font-size: 11px;
+        color: #a0a0a0;
+    }
+
+        .file__name + .file__meta {
+            margin-top: 3px;
+        }
+
+    .file[data-file-type="pdf"] {
+        background-image: url("../img/file-icons/pdf-icon.png");
+    }
+
+    .file[data-file-type="doc"] {
+        background-image: url("../img/file-icons/doc-icon.png");
+    }
+
+    .file[data-file-type="jpeg"],
+    .file[data-file-type="jpg"] {
+        background-image: url("../img/file-icons/jpeg-icon.png");
+    }
+
+    .file[data-file-type="png"] {
+        background-image: url("../img/file-icons/png-icon.png");
+    }
+
+    .file[data-file-type="rar"] {
+        background-image: url("../img/file-icons/rar-icon.png");
+    }
+
+    .file[data-file-type="tiff"] {
+        background-image: url("../img/file-icons/tiff-icon.png");
+    }
+
+    .file[data-file-type="xls"] {
+        background-image: url("../img/file-icons/xls-icon.png");
+    }
+
+     .file[data-file-type="zip"] {
+        background-image: url("../img/file-icons/zip-icon.png");
+    }
+
+.attach-icon {
+    margin-right: 2px;
+    display: inline-block;
+    vertical-align: -4px;
+    width: 13px;
+    height: 16px;
+}
+
+
+/**
+ * Блок с аватаром и именем пользователя
+ */
+.user {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+}
+
+    .user__img {
+        float: left;
+        font-size: 34px;
+        width:  1em;
+        height: 1em;
+        border-radius: 50%;
+    }
+
+    .user__content {
+        margin-left: 42px;
+        padding: 9px 0 0;
+        display: block;
+        line-height: initial;
+    }
+
+
+/**
+ * Прогресс-бар
+ */
+.progress {
+    position: relative;
+    display: block;
+    height: 9px;
+    overflow: hidden;
+    background: #e8e8e8;
+    border-radius: 9px;
+}
+
+    .progress__value {
+        max-width: 100%;
+        height: 100%;
+        background: #76e074;
+    }
+
+
+/**
+ * Постраничная навигация
+ */
+.page-nav {
+    padding-top: 24px;
+    overflow: hidden;
+    color: #18587a;
+}
+
+    .page-nav__list {
+        margin: 0 10px;
+        float: left;
+    }
+
+    .page-nav__back {
+        line-height: 20px;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .page-nav__link {
+        margin: 0 2px;
+        float: left;
+        padding: 3px 6px;
+        line-height: 1;
+        border: 1px solid;
+        text-align: center;
+        text-decoration: none;
+        color: inherit;
+    }
+
+        .page-nav__link:hover {
+            color: #d91a14;
+        }
+
+        .page-nav__link_active {
+            color: #d91a14;
+            pointer-events: none;
+        }
+
+        .page-nav__link_disable {
+            color: #c2c2c2;
+            pointer-events: none;
+        }
+
+    .page-nav__link_prev::before,
+    .page-nav__link_next::before {
+        content: "";
+        display: inline-block;
+        width:  6px;
+        height: 6px;
+        border-style: solid;
+        border-width: 0 2px 2px 0;
+    }
+
+    .page-nav__link_prev {
+        margin-left: 0;
+        margin-right: 7px;
+    }
+
+        .page-nav__link_prev::before {
+            transform: translate(2px, -1px) rotate(135deg);
+        }
+
+    .page-nav__link_next {
+        margin-right: 0;
+        margin-left: 7px;
+    }
+
+        .page-nav__link_next::before {
+            transform: translate(-2px, -1px) rotate(-45deg);
+        }
+
+
 
 
 .logo {
@@ -2513,7 +3007,7 @@ html {
 /**
  * Форма связи
  */
-.contacts-form {
+.account-contacts-form {
     box-sizing: border-box;
     padding: 24px 16px 0;
     min-height: 100%;
@@ -2716,6 +3210,128 @@ html {
     }
 
 
+/**
+ * Прогресс выполнения проекта
+ */
+.project-time {
+    overflow: hidden;
+}
+
+    .project-time__start {
+        float: left;
+    }
+
+    .project-time__end {
+        float: right;
+    }
+
+    .project-time__progress {
+        clear: both;
+        padding-top: 4px;
+    }
+
+
+/**
+ * Форма оплаы подписки
+ */
+.paymant-form {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 16px;
+    white-space: nowrap;
+}
+
+    .paymant-form__cell {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .paymant-form__form-field {
+        position: relative;
+    }
+
+        .paymant-form__form-field::after {
+            content: "\20BD";
+            position: absolute;
+            top: 0;
+            right: 8px;
+            margin-top: 1px;
+            font-size: 22px;
+            line-height: 31px;
+            pointer-events: none;
+            color: #dbdbdb;
+        }
+
+    .paymant-form__input {
+        width: 126px;
+        height: 31px;
+    }
+
+
+/* Предложения по заявке
+   ========================================================================== */
+
+.proposal-list {}
+
+    .proposal-list__item {}
+
+        .proposal-list__item + .proposal-list__item {
+            margin-top: 8px;
+        }
+
+.proposal {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 0;
+    padding: 11px 16px;
+    font-size: 12px;
+    background: #fff;
+}
+
+    .proposal_checked {
+        background: #f8fcfe;
+    }
+
+    .proposal__content,
+    .proposal__side {
+        display: table-cell;
+        vertical-align: top;
+    }
+
+    .proposal__side {
+        width: 220px;
+        padding-left: 14px;
+        padding-right: 14px;
+        border-left: 1px solid #e8e8e8;
+    }
+
+    .proposal__content {
+        padding-top: 7px;
+    }
+
+    .proposal-content {
+        position: relative;
+        padding: 4px 20px 7px 38px;
+    }
+
+        .proposal-content__control {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+    .proposal-content__date {
+        color: #a0a0a0;
+    }
+
+    .proposal-content__text {
+        margin: 7px 0 9px;
+        line-height: 1.42;
+    }
+
+
 /* ==========================================================================
    CSS-утилиты
    ========================================================================== */
@@ -2749,3 +3365,7 @@ html {
         display: table;
         clear: both;
     }
+
+.nowrap {
+    white-space: nowrap;
+}
