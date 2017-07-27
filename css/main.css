@@ -3280,11 +3280,12 @@ html {
         }
 
 .proposal {
-    width: 100%;
     display: table;
     table-layout: fixed;
     border-collapse: separate;
     border-spacing: 0;
+    box-sizing: border-box;
+    width: 100%;
     padding: 11px 16px;
     font-size: 12px;
     background: #fff;
@@ -3302,8 +3303,7 @@ html {
 
     .proposal__side {
         width: 220px;
-        padding-left: 14px;
-        padding-right: 14px;
+        padding: 0 14px;
         border-left: 1px solid #e8e8e8;
     }
 
@@ -3329,6 +3329,22 @@ html {
     .proposal-content__text {
         margin: 7px 0 9px;
         line-height: 1.42;
+    }
+
+    @media (max-width: 768px) {
+        .proposal,
+        .proposal__content,
+        .proposal__side {
+            display: block;
+            width: auto;
+        }
+
+        .proposal__side {
+            margin-top: 6px;
+            padding: 14px 0;
+            border: 0;
+            border-top: 1px solid #e8e8e8;
+        }
     }
 
 
