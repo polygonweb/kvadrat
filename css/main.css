@@ -867,6 +867,12 @@ html {
             0% { opacity: 0; }
         }
 
+    @media (max-width: 1260px) {
+        .sub-nav {
+            margin-bottom: 28px;
+        }
+    }
+
     @media (max-width: 420px) {
         .sub-nav {
             margin-bottom: 24px;
@@ -1079,6 +1085,77 @@ html {
         display: none;
     }
 
+@media (max-width: 1260px) {
+    .data-grid,
+    .data-grid__item,
+    .data-grid__row,
+    .data-grid__cell {
+        display: block;
+    }
+
+    .data-grid__head {
+        display: none;
+    }
+
+    .data-grid__row {
+        padding: 1px 0 0 1px;
+    }
+
+    .data-grid__item:not(:first-of-type)::before {
+        content: none;
+    }
+
+    .data-grid {
+        margin: 0 -4px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+        .data-grid__item {
+            margin: 0 4px 8px;
+            flex: 1 0 480px;
+        }
+
+    .data-grid__cell {
+        margin: -1px 0 0 -1px;
+        position: relative;
+        display: flex;
+        border: 1px solid #e8e8e8;
+    }
+
+        .data-grid__cell::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .data-grid__cell:empty {
+            display: none;
+        }
+
+        .data-grid__cell[data-header]::before {
+            content: attr(data-header);
+            padding-right: 12px;
+            flex: 0 0 180px;
+            font-weight: bold;
+        }
+
+    .data-grid__item:not(.data-grid__item_close) .data-grid__row_child {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+        .data-grid__row_child .data-grid__cell {
+            flex: 1 0 300px;
+            padding: 12px;
+            border: 0;
+        }
+
+        .data-grid__row_child .data-grid__sub-title {
+            margin: 0;
+        }
+}
+
 
 /**
  * Выпадающие блоки
@@ -1123,6 +1200,8 @@ html {
             position: absolute;
             bottom: 100%;
             left: 40px;
+            width: 0;
+            height: 0;
             border: 6px solid transparent;
             border-bottom-color: #fff;
         }
@@ -3399,8 +3478,43 @@ html {
         }
 
     .paymant-form__input {
-        width: 126px;
+        min-width: 126px;
         height: 31px;
+    }
+
+.payment-block {}
+
+    .payment-block__price {}
+    .payment-block__control {}
+
+    @media (max-width: 1260px) {
+        .payment-block__control .drop__content {
+            left: 50%;
+            right: auto;
+            margin-left: -213px;
+        }
+
+            .payment-block__control .drop__content::after {
+                left: 0;
+                right: 0;
+                margin-left: auto;
+                margin-right: auto;
+            }
+    }
+
+    @media (max-width: 520px) {
+        .paymant-form {
+            display: inline-block;
+        }
+
+        .paymant-form__cell {
+            display: block;
+            padding: 8px;
+        }
+
+        .payment-block__control .drop__content {
+            margin-left: -90px;
+        }
     }
 
 
@@ -3782,8 +3896,6 @@ html {
             padding: 14px 16px;
         }
     }
-
-
 
 
 /* ==========================================================================
