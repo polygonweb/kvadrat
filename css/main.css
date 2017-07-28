@@ -958,10 +958,12 @@ html {
 /**
  * Таблицы с данными
  */
+.data-grid-wrapper {
+    /*overflow: auto;*/
+}
+
 .data-grid {
     display: table;
-    /*table-layout: fixed;*/
-    /*border-collapse: collapse;*/
     border-collapse: separate;
     border-spacing: 0;
     width: 100%;
@@ -1425,6 +1427,113 @@ html {
         }
 
 
+/**
+ * Обозначений рейтинга со звездой
+ */
+.star-rating {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+}
+
+    .star-rating::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin-top: 2px;
+        width: 49px;
+        height: 48px;
+        background: url("../img/star.png") no-repeat;
+    }
+
+
+/**
+ * Контролы для управления слайдерами
+ */
+.media-nav {
+    font-size: 0;
+    text-align: center;
+}
+
+    .media-nav__item {
+        position: relative;
+        margin: 0 4px;
+        display: inline-block;
+        vertical-align: middle;
+        box-sizing: content-box;
+        padding: 0;
+        width: 14px;
+        height: 14px;
+        line-height: 14px;
+        border: 1px solid;
+        color: #c2c2c2;
+        background: #fff;
+        cursor: pointer;
+        transition: .2s;
+    }
+
+        .media-nav__item::before {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            width: 8px;
+            height: 8px;
+            opacity: 0;
+            background: currentColor;
+        }
+
+        .media-nav__item:hover,
+        .media-nav__item_active {
+            color: #d91a14;
+        }
+
+        .media-nav__item_active::before {
+            opacity: 1;
+        }
+
+/**
+ * Кнопка проигрывания
+ */
+.play-btn {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    font-size: 70px;
+    width: 1em;
+    height: 1em;
+    border: 9px solid rgba(255, 255, 255, 0.47);
+    color: #333e50;
+    background: #fff;
+    background-clip: padding-box;
+    border-radius: 50%;
+    transition: .3s cubic-bezier(0.57, 0.05, 0.22, 1.49);
+    cursor: pointer;
+}
+
+    .play-btn::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin-left: 4px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+        border-width: 14px 0 14px 18px;
+    }
+
+    .play-btn:hover {
+        transform: scale(1.4);
+        background-color: #333e50;
+        color: #fff;
+    }
+
 
 
 .logo {
@@ -1874,7 +1983,8 @@ html {
         .contractor__head > * {
             padding: 17px;
             display: table-cell;
-            vertical-align: middle;
+            /*vertical-align: middle;*/
+            vertical-align: top;
         }
 
         .contractor__person {}
@@ -1928,10 +2038,17 @@ html {
                    display: table-cell;
                    vertical-align: top;
                    padding: 5px 9px;
+                   color: #000;
                 }
 
                 .contractor-meta__key {
                     color: #979797;
+                }
+
+                .contractor-meta_inline .contractor-row {
+                    margin-left: 22px;
+                    margin-bottom: 22px;
+                    display: inline-table;
                 }
 
             .contractor__toggle {
@@ -2006,15 +2123,24 @@ html {
         background-color: #e8e8e8;
     }
 
-        .works-data-table td {
-            padding: 9px 0;
-            vertical-align: top;
+        .works-data-table {
+            border-collapse: collapse;
+            line-height: 1;
         }
 
-            .works-data-table td:last-child {
-                padding-left: 200px;
-                padding-right: 20px;
-                white-space: nowrap;
+            .works-data-table td {
+                padding: 9px 0;
+                vertical-align: top;
+            }
+
+                .works-data-table td:last-child {
+                    padding-left: 200px;
+                    padding-right: 20px;
+                    white-space: nowrap;
+                }
+
+            .works-data-table_stripe tr:nth-child(even) {
+                background-color: #f3f3f3;
             }
 
         .contractor_state_close {}
@@ -2146,8 +2272,8 @@ html {
     }
 
 .media-grid {
-    margin-left:  -9px;
-    margin-right: -9px;
+    margin-left:  -7px;
+    margin-right: -7px;
     font-size: 0;
 }
 
@@ -2156,7 +2282,7 @@ html {
         vertical-align: top;
         box-sizing: border-box;
         width: calc(100% / 3);
-        padding: 0 9px 18px;
+        padding: 0 7px 14px;
         font-size: 1rem;
         text-align: left;
     }
@@ -2175,11 +2301,21 @@ html {
 
 .media-obj {
     display: block;
-    height: 261px;
+    height: 260px;
     background: none no-repeat 50%;
     -webkit-background-size: cover;
             background-size: cover;
 }
+
+    /*.media-obj__content {
+        position: relative;
+        z-index: 2;
+        opacity: 0;
+        vertical-align: top;
+        min-width: 100%;
+        max-width: 100%;
+        height: 100%;
+    }*/
 
 .contacts-section {
     position: relative;
@@ -3346,6 +3482,308 @@ html {
             border-top: 1px solid #e8e8e8;
         }
     }
+
+
+/* Страница "Профиль подрядчика" для заказчика
+   ========================================================================== */
+.contractor-profile {
+    padding-top: 36px;
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+    .contractor-profile__side,
+    .contractor-profile__main {
+        display: table-cell;
+        vertical-align: top;
+    }
+
+    .contractor-profile__side {
+        padding-right: 20px;
+        width: 284px;
+    }
+
+/**
+ * Краткая карточка
+ */
+.contractor-profile-summary {
+    background: #fff;
+}
+
+    .contractor-profile-summary__body {
+        padding: 22px 17px;
+    }
+
+    .contractor-profile-summary__avatar {
+        margin: 0 auto 8px;
+        display: block;
+        width: 145px;
+        height: 145px;
+    }
+
+    .contractor-profile-summary__name {
+        margin-bottom: 22px;
+        line-height: 1.29;
+        text-align: center;
+    }
+
+    .contractor-profile-summary__foot {
+        padding: 19px 17px 23px;
+        border-top: 1px solid #e8e8e8;
+    }
+
+.summary-list {
+    margin: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 0;
+    list-style: none;
+    font-size: 12px;
+}
+
+    .summary-list__item {
+        position: relative;
+        box-sizing: border-box;
+        padding-left: 18px;
+        padding: 8px 0 8px 18px;
+    }
+
+    .summary-list__place {}
+
+        .summary-list__place::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 12px;
+            height: 18px;
+            background: url("../img/place.jpg");
+        }
+
+    .summary-list__rating {
+        margin-left: 14px;
+    }
+
+    .summary-list__label {
+        color: #979797;
+    }
+
+/**
+ * Детализация подрядчика
+ */
+.profile-details {
+    line-height: 1.57;
+    background: #fff;
+}
+
+.profile-details-block {
+    padding: 25px 17px;
+}
+
+    .profile-details-block:not(:last-of-type) {
+        border-bottom: 1px solid #e8e8e8;
+    }
+
+    .profile-details-block__title {
+        margin: 0 0 10px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+.profile-details-block__media {
+    margin-left:  -17px;
+    margin-right: -17px;
+}
+
+.profile-image-gallery {
+    overflow: hidden;
+    padding-bottom: 22px;
+}
+
+    .profile-image-gallery__track {
+        overflow: hidden;
+        white-space: nowrap;
+        font-size: 0;
+        transition: transform .5s;
+    }
+
+    .profile-image-gallery__item {
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
+        white-space: normal;
+        font-size: 1rem;
+    }
+
+    /**
+     * Работа галереи без js
+     */
+    .profile-image-gallery_fallback {}
+
+        .profile-image-gallery_fallback .profile-image-gallery__track {
+            max-width: 100%;
+            display: inline-block;
+            vertical-align: top;
+            overflow-y: hidden;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .profile-image-gallery_fallback .profile-image-gallery__item {
+            white-space: nowrap;
+            width: auto;
+        }
+
+        .profile-image-gallery_fallback .profile-image-gallery__nav {
+            display: none;
+        }
+
+        .profile-image-gallery_fallback .img-grid {
+            margin-left: 0;
+            margin-right: 0;
+            flex-wrap: nowrap;
+        }
+
+            .profile-image-gallery_fallback .img-grid__cell {
+                flex: 0 0 auto;
+            }
+
+            .profile-image-gallery_fallback .img-obj {
+                width: 220px;
+            }
+
+.img-grid {
+    margin-left:  -7px;
+    margin-right: -7px;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0;
+}
+
+    .img-grid__cell {
+        margin: 0 7px 14px;
+        flex: 1 1 auto;
+    }
+
+.img-obj {
+    position: relative;
+    height: 220px;
+    background: none no-repeat;
+    -webkit-background-size: cover;
+            background-size: cover;
+}
+
+    .img-obj__content {
+        position: relative;
+        z-index: 1;
+        opacity: 0;
+        min-width: 100%;
+        max-width: 100%;
+        vertical-align: top;
+        height: 100%;
+    }
+
+.video-obj {
+    position: relative;
+}
+
+    .video-obj::before {
+        content: "";
+        display: block;
+        padding-top: 67.85%;
+    }
+
+    .video-obj__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: none no-repeat;
+        -webkit-background-size: cover;
+                background-size: cover;
+    }
+
+    .video-obj__btn {
+        position: absolute;
+        top:  50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    }
+
+.testimonial {}
+
+    .testimonial__author {
+        margin-bottom: 20px;
+        font-size: 12px;
+    }
+
+        .testimonial__author-img {
+            font-size: 40px;
+        }
+
+        .testimonial__author-content {
+            margin-left: 50px;
+        }
+
+    .testimonial__date {
+        font-size: 11px;
+        color: #a0a0a0;
+    }
+
+    .testimonial__content {
+        position: relative;
+        padding: 20px 22px;
+        background: #f3f3f3;
+    }
+
+        .testimonial__content::before {
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            left: 50px;
+            color: #f3f3f3;
+            border: 12px solid;
+            border-top-color: transparent;
+            border-right-color: transparent;
+        }
+
+    @media (max-width: 920px) {
+        .contractor-profile,
+        .contractor-profile__side,
+        .contractor-profile__main {
+            display: block;
+            width: auto;
+        }
+
+        .contractor-profile__side {
+            padding-right: 0;
+            margin-bottom: 20px;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .testimonial__content {
+            font-size: 12px;
+            padding: 14px 16px;
+        }
+    }
+
+
 
 
 /* ==========================================================================

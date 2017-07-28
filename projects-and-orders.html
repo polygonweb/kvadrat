@@ -85,269 +85,271 @@
                         <!-- BEGIN orders -->
                         <div class="sub-nav-content__pane active" id="orders">
                             <!-- BEGIN data-grid -->
-                            <table class="data-grid">
-                                <thead class="data-grid__head">
-                                    <tr class="data-grid__row">
-                                        <th class="data-grid__cell data-grid__cell_head">Статус </th>
-                                        <th class="data-grid__cell data-grid__cell_head">Дата заявки</th>
-                                        <th class="data-grid__cell data-grid__cell_head">Срок исполнения  замеров</th>
-                                        <th class="data-grid__cell data-grid__cell_head">Адрес</th>
-                                        <th class="data-grid__cell data-grid__cell_head">Виды деятельности</th>
-                                        <th class="data-grid__cell data-grid__cell_head">Предложения</th>
-                                        <th class="data-grid__cell data-grid__cell_head">Замеры</th>
-                                        <th class="data-grid__cell data-grid__cell_head">Договор</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="data-grid__item">
-                                    <tr class="data-grid__row">
-                                        <td class="data-grid__cell">
-                                            <div class="drop">
-                                                <div class="drop__trigger nowrap">
-                                                    <span class="status-icon status-icon_accepted"></span>
-                                                    <span class="text-link text-link_internal">Принят</span>
+                            <div class="data-grid-wrapper">
+                                <table class="data-grid">
+                                    <thead class="data-grid__head">
+                                        <tr class="data-grid__row">
+                                            <th class="data-grid__cell data-grid__cell_head">Статус </th>
+                                            <th class="data-grid__cell data-grid__cell_head">Дата заявки</th>
+                                            <th class="data-grid__cell data-grid__cell_head">Срок исполнения  замеров</th>
+                                            <th class="data-grid__cell data-grid__cell_head">Адрес</th>
+                                            <th class="data-grid__cell data-grid__cell_head">Виды деятельности</th>
+                                            <th class="data-grid__cell data-grid__cell_head">Предложения</th>
+                                            <th class="data-grid__cell data-grid__cell_head">Замеры</th>
+                                            <th class="data-grid__cell data-grid__cell_head">Договор</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="data-grid__item">
+                                        <tr class="data-grid__row">
+                                            <td class="data-grid__cell">
+                                                <div class="drop">
+                                                    <div class="drop__trigger nowrap">
+                                                        <span class="status-icon status-icon_accepted"></span>
+                                                        <span class="text-link text-link_internal">Принят</span>
+                                                    </div>
+                                                    <div class="drop__content">
+                                                        <ul class="status-list">
+                                                            <li class="status-list__item">
+                                                                <a class="status-list__link" href="javascript:void(0)">
+                                                                    <span class="status-icon status-icon_accepted"></span>
+                                                                    Принят
+                                                                </a>
+                                                            </li>
+                                                            <li class="status-list__item">
+                                                                <a class="status-list__link" href="javascript:void(0)">
+                                                                    <span class="status-icon status-icon_processed"></span>
+                                                                    Обработан
+                                                                </a>
+                                                            </li>
+                                                            <li class="status-list__item">
+                                                                <a class="status-list__link" href="javascript:void(0)">
+                                                                    <span class="status-icon status-icon_done"></span>
+                                                                    Выполнен
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
-                                                <div class="drop__content">
-                                                    <ul class="status-list">
-                                                        <li class="status-list__item">
-                                                            <a class="status-list__link" href="javascript:void(0)">
-                                                                <span class="status-icon status-icon_accepted"></span>
-                                                                Принят
-                                                            </a>
-                                                        </li>
-                                                        <li class="status-list__item">
-                                                            <a class="status-list__link" href="javascript:void(0)">
-                                                                <span class="status-icon status-icon_processed"></span>
-                                                                Обработан
-                                                            </a>
-                                                        </li>
-                                                        <li class="status-list__item">
-                                                            <a class="status-list__link" href="javascript:void(0)">
-                                                                <span class="status-icon status-icon_done"></span>
-                                                                Выполнен
-                                                            </a>
-                                                        </li>
-                                                    </ul>
+                                            </td>
+                                            <td class="data-grid__cell">12.07.2017</td>
+                                            <td class="data-grid__cell">12.07.2017</td>
+                                            <td class="data-grid__cell">Комсомольский пр. 70, кв.53</td>
+                                            <td class="data-grid__cell">
+                                                <div class="drop">
+                                                    <div class="drop__trigger">
+                                                        <ul class="tags">
+                                                            <li class="tags__item tag">монтаж окон</li>
+                                                            <li class="tags__item tag">покраска стен</li>
+                                                            <li class="tags__item tag">штукатурка стен</li>
+                                                            <li class="tags__item tag">монтаж стяжки поля</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="drop__content">
+                                                       <div style="padding: 50px"></div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <td class="data-grid__cell">12.07.2017</td>
-                                        <td class="data-grid__cell">12.07.2017</td>
-                                        <td class="data-grid__cell">Комсомольский пр. 70, кв.53</td>
-                                        <td class="data-grid__cell">
-                                            <div class="drop">
-                                                <div class="drop__trigger">
-                                                    <ul class="tags">
-                                                        <li class="tags__item tag">монтаж окон</li>
-                                                        <li class="tags__item tag">покраска стен</li>
-                                                        <li class="tags__item tag">штукатурка стен</li>
-                                                        <li class="tags__item tag">монтаж стяжки поля</li>
-                                                    </ul>
+                                            </td>
+                                            <td class="data-grid__cell">
+                                                <a class="text-link" href="proposals.html">2 новых</a>
+                                            </td>
+                                            <td class="data-grid__cell">
+                                                <div class="drop">
+                                                    <div class="drop__trigger nowrap">
+                                                        <img class="attach-icon" src="img/attach.png" width="13" height="16">
+                                                        <span class="text-link text-link_internal">2 файла</span>
+                                                    </div>
+                                                    <div class="drop__content">
+                                                        <ul class="file-list nowrap">
+                                                            <li class="file-list__item">
+                                                                <div class="file" data-file-type="pdf">
+                                                                    <a href="#404" class="file__name text-link">Замеры помещения</a>
+                                                                    <div class="file__meta">(PDF, 30 Кб)</div>
+                                                                </div>
+                                                            </li>
+                                                            <li class="file-list__item">
+                                                                <div class="file" data-file-type="doc">
+                                                                    <a href="#404" class="file__name text-link">Замеры</a>
+                                                                    <div class="file__meta">(PDF, 84 Кб)</div>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
-                                                <div class="drop__content">
-                                                   <div style="padding: 50px"></div>
+                                            </td>
+                                            <td class="data-grid__cell">
+                                                <div>№ 130</div>
+                                                <div>12.07.2017</div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody class="data-grid__item">
+                                        <tr class="data-grid__row">
+                                            <td class="data-grid__cell">
+                                                <div class="drop">
+                                                    <div class="drop__trigger nowrap">
+                                                        <span class="status-icon status-icon_processed"></span>
+                                                        <span class="text-link text-link_internal">Обработан</span>
+                                                    </div>
+                                                    <div class="drop__content">
+                                                        <ul class="status-list">
+                                                            <li class="status-list__item">
+                                                                <a class="status-list__link" href="javascript:void(0)">
+                                                                    <span class="status-icon status-icon_accepted"></span>
+                                                                    Принят
+                                                                </a>
+                                                            </li>
+                                                            <li class="status-list__item">
+                                                                <a class="status-list__link" href="javascript:void(0)">
+                                                                    <span class="status-icon status-icon_processed"></span>
+                                                                    Обработан
+                                                                </a>
+                                                            </li>
+                                                            <li class="status-list__item">
+                                                                <a class="status-list__link" href="javascript:void(0)">
+                                                                    <span class="status-icon status-icon_done"></span>
+                                                                    Выполнен
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <td class="data-grid__cell">
-                                            <a class="text-link" href="proposals.html">2 новых</a>
-                                        </td>
-                                        <td class="data-grid__cell">
-                                            <div class="drop">
-                                                <div class="drop__trigger nowrap">
-                                                    <img class="attach-icon" src="img/attach.png" width="13" height="16">
-                                                    <span class="text-link text-link_internal">2 файла</span>
+                                            </td>
+                                            <td class="data-grid__cell">12.07.2017</td>
+                                            <td class="data-grid__cell">12.07.2017</td>
+                                            <td class="data-grid__cell">Комсомольский пр. 70, кв.53</td>
+                                            <td class="data-grid__cell">
+                                                <div class="drop">
+                                                    <div class="drop__trigger">
+                                                        <ul class="tags">
+                                                            <li class="tags__item tag">монтаж окон</li>
+                                                            <li class="tags__item tag">покраска стен</li>
+                                                            <li class="tags__item tag">штукатурка стен</li>
+                                                            <li class="tags__item tag">монтаж стяжки поля</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="drop__content">
+                                                       <div style="padding: 50px"></div>
+                                                    </div>
                                                 </div>
-                                                <div class="drop__content">
-                                                    <ul class="file-list nowrap">
-                                                        <li class="file-list__item">
-                                                            <div class="file" data-file-type="pdf">
-                                                                <a href="#404" class="file__name text-link">Замеры помещения</a>
-                                                                <div class="file__meta">(PDF, 30 Кб)</div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="file-list__item">
-                                                            <div class="file" data-file-type="doc">
-                                                                <a href="#404" class="file__name text-link">Замеры</a>
-                                                                <div class="file__meta">(PDF, 84 Кб)</div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
+                                            </td>
+                                            <td class="data-grid__cell">
+                                                <a class="text-link" href="proposals.html">2 новых</a>
+                                            </td>
+                                            <td class="data-grid__cell">
+                                                <div class="drop">
+                                                    <div class="drop__trigger nowrap">
+                                                        <img class="attach-icon" src="img/attach.png" width="13" height="16">
+                                                        <span class="text-link text-link_internal">2 файла</span>
+                                                    </div>
+                                                    <div class="drop__content">
+                                                        <ul class="file-list nowrap">
+                                                            <li class="file-list__item">
+                                                                <div class="file" data-file-type="pdf">
+                                                                    <a href="#404" class="file__name text-link">Замеры помещения</a>
+                                                                    <div class="file__meta">(PDF, 30 Кб)</div>
+                                                                </div>
+                                                            </li>
+                                                            <li class="file-list__item">
+                                                                <div class="file" data-file-type="doc">
+                                                                    <a href="#404" class="file__name text-link">Замеры</a>
+                                                                    <div class="file__meta">(PDF, 84 Кб)</div>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <td class="data-grid__cell">
-                                            <div>№ 130</div>
-                                            <div>12.07.2017</div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                                <tbody class="data-grid__item">
-                                    <tr class="data-grid__row">
-                                        <td class="data-grid__cell">
-                                            <div class="drop">
-                                                <div class="drop__trigger nowrap">
-                                                    <span class="status-icon status-icon_processed"></span>
-                                                    <span class="text-link text-link_internal">Обработан</span>
+                                            </td>
+                                            <td class="data-grid__cell">
+                                                <div>№ 130</div>
+                                                <div>12.07.2017</div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody class="data-grid__item">
+                                        <tr class="data-grid__row">
+                                            <td class="data-grid__cell">
+                                                <div class="drop">
+                                                    <div class="drop__trigger nowrap">
+                                                        <span class="status-icon status-icon_done"></span>
+                                                        <span class="text-link text-link_internal">Выполнен</span>
+                                                    </div>
+                                                    <div class="drop__content">
+                                                        <ul class="status-list">
+                                                            <li class="status-list__item">
+                                                                <a class="status-list__link" href="javascript:void(0)">
+                                                                    <span class="status-icon status-icon_accepted"></span>
+                                                                    Принят
+                                                                </a>
+                                                            </li>
+                                                            <li class="status-list__item">
+                                                                <a class="status-list__link" href="javascript:void(0)">
+                                                                    <span class="status-icon status-icon_processed"></span>
+                                                                    Обработан
+                                                                </a>
+                                                            </li>
+                                                            <li class="status-list__item">
+                                                                <a class="status-list__link" href="javascript:void(0)">
+                                                                    <span class="status-icon status-icon_done"></span>
+                                                                    Выполнен
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
-                                                <div class="drop__content">
-                                                    <ul class="status-list">
-                                                        <li class="status-list__item">
-                                                            <a class="status-list__link" href="javascript:void(0)">
-                                                                <span class="status-icon status-icon_accepted"></span>
-                                                                Принят
-                                                            </a>
-                                                        </li>
-                                                        <li class="status-list__item">
-                                                            <a class="status-list__link" href="javascript:void(0)">
-                                                                <span class="status-icon status-icon_processed"></span>
-                                                                Обработан
-                                                            </a>
-                                                        </li>
-                                                        <li class="status-list__item">
-                                                            <a class="status-list__link" href="javascript:void(0)">
-                                                                <span class="status-icon status-icon_done"></span>
-                                                                Выполнен
-                                                            </a>
-                                                        </li>
-                                                    </ul>
+                                            </td>
+                                            <td class="data-grid__cell">12.07.2017</td>
+                                            <td class="data-grid__cell">12.07.2017</td>
+                                            <td class="data-grid__cell">Комсомольский пр. 70, кв.53</td>
+                                            <td class="data-grid__cell">
+                                                <div class="drop">
+                                                    <div class="drop__trigger">
+                                                        <ul class="tags">
+                                                            <li class="tags__item tag">монтаж окон</li>
+                                                            <li class="tags__item tag">покраска стен</li>
+                                                            <li class="tags__item tag">штукатурка стен</li>
+                                                            <li class="tags__item tag">монтаж стяжки поля</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="drop__content">
+                                                       <div style="padding: 50px"></div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <td class="data-grid__cell">12.07.2017</td>
-                                        <td class="data-grid__cell">12.07.2017</td>
-                                        <td class="data-grid__cell">Комсомольский пр. 70, кв.53</td>
-                                        <td class="data-grid__cell">
-                                            <div class="drop">
-                                                <div class="drop__trigger">
-                                                    <ul class="tags">
-                                                        <li class="tags__item tag">монтаж окон</li>
-                                                        <li class="tags__item tag">покраска стен</li>
-                                                        <li class="tags__item tag">штукатурка стен</li>
-                                                        <li class="tags__item tag">монтаж стяжки поля</li>
-                                                    </ul>
+                                            </td>
+                                            <td class="data-grid__cell">
+                                                <a class="text-link" href="proposals.html">2 новых</a>
+                                            </td>
+                                            <td class="data-grid__cell">
+                                                <div class="drop">
+                                                    <div class="drop__trigger nowrap">
+                                                        <img class="attach-icon" src="img/attach.png" width="13" height="16">
+                                                        <span class="text-link text-link_internal">2 файла</span>
+                                                    </div>
+                                                    <div class="drop__content">
+                                                        <ul class="file-list nowrap">
+                                                            <li class="file-list__item">
+                                                                <div class="file" data-file-type="pdf">
+                                                                    <a href="#404" class="file__name text-link">Замеры помещения</a>
+                                                                    <div class="file__meta">(PDF, 30 Кб)</div>
+                                                                </div>
+                                                            </li>
+                                                            <li class="file-list__item">
+                                                                <div class="file" data-file-type="doc">
+                                                                    <a href="#404" class="file__name text-link">Замеры</a>
+                                                                    <div class="file__meta">(PDF, 84 Кб)</div>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
-                                                <div class="drop__content">
-                                                   <div style="padding: 50px"></div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="data-grid__cell">
-                                            <a class="text-link" href="proposals.html">2 новых</a>
-                                        </td>
-                                        <td class="data-grid__cell">
-                                            <div class="drop">
-                                                <div class="drop__trigger nowrap">
-                                                    <img class="attach-icon" src="img/attach.png" width="13" height="16">
-                                                    <span class="text-link text-link_internal">2 файла</span>
-                                                </div>
-                                                <div class="drop__content">
-                                                    <ul class="file-list nowrap">
-                                                        <li class="file-list__item">
-                                                            <div class="file" data-file-type="pdf">
-                                                                <a href="#404" class="file__name text-link">Замеры помещения</a>
-                                                                <div class="file__meta">(PDF, 30 Кб)</div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="file-list__item">
-                                                            <div class="file" data-file-type="doc">
-                                                                <a href="#404" class="file__name text-link">Замеры</a>
-                                                                <div class="file__meta">(PDF, 84 Кб)</div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="data-grid__cell">
-                                            <div>№ 130</div>
-                                            <div>12.07.2017</div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                                <tbody class="data-grid__item">
-                                    <tr class="data-grid__row">
-                                        <td class="data-grid__cell">
-                                            <div class="drop">
-                                                <div class="drop__trigger nowrap">
-                                                    <span class="status-icon status-icon_done"></span>
-                                                    <span class="text-link text-link_internal">Выполнен</span>
-                                                </div>
-                                                <div class="drop__content">
-                                                    <ul class="status-list">
-                                                        <li class="status-list__item">
-                                                            <a class="status-list__link" href="javascript:void(0)">
-                                                                <span class="status-icon status-icon_accepted"></span>
-                                                                Принят
-                                                            </a>
-                                                        </li>
-                                                        <li class="status-list__item">
-                                                            <a class="status-list__link" href="javascript:void(0)">
-                                                                <span class="status-icon status-icon_processed"></span>
-                                                                Обработан
-                                                            </a>
-                                                        </li>
-                                                        <li class="status-list__item">
-                                                            <a class="status-list__link" href="javascript:void(0)">
-                                                                <span class="status-icon status-icon_done"></span>
-                                                                Выполнен
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="data-grid__cell">12.07.2017</td>
-                                        <td class="data-grid__cell">12.07.2017</td>
-                                        <td class="data-grid__cell">Комсомольский пр. 70, кв.53</td>
-                                        <td class="data-grid__cell">
-                                            <div class="drop">
-                                                <div class="drop__trigger">
-                                                    <ul class="tags">
-                                                        <li class="tags__item tag">монтаж окон</li>
-                                                        <li class="tags__item tag">покраска стен</li>
-                                                        <li class="tags__item tag">штукатурка стен</li>
-                                                        <li class="tags__item tag">монтаж стяжки поля</li>
-                                                    </ul>
-                                                </div>
-                                                <div class="drop__content">
-                                                   <div style="padding: 50px"></div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="data-grid__cell">
-                                            <a class="text-link" href="proposals.html">2 новых</a>
-                                        </td>
-                                        <td class="data-grid__cell">
-                                            <div class="drop">
-                                                <div class="drop__trigger nowrap">
-                                                    <img class="attach-icon" src="img/attach.png" width="13" height="16">
-                                                    <span class="text-link text-link_internal">2 файла</span>
-                                                </div>
-                                                <div class="drop__content">
-                                                    <ul class="file-list nowrap">
-                                                        <li class="file-list__item">
-                                                            <div class="file" data-file-type="pdf">
-                                                                <a href="#404" class="file__name text-link">Замеры помещения</a>
-                                                                <div class="file__meta">(PDF, 30 Кб)</div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="file-list__item">
-                                                            <div class="file" data-file-type="doc">
-                                                                <a href="#404" class="file__name text-link">Замеры</a>
-                                                                <div class="file__meta">(PDF, 84 Кб)</div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="data-grid__cell">
-                                            <div>№ 130</div>
-                                            <div>12.07.2017</div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                            </td>
+                                            <td class="data-grid__cell">
+                                                <div>№ 130</div>
+                                                <div>12.07.2017</div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                             <!-- END data-grid -->
                         </div>
                         <!-- END orders -->
@@ -355,406 +357,408 @@
                         <!-- BEGIN projects -->
                         <div class="sub-nav-content__pane" id="projects">
                              <!-- BEGIN data-grid -->
-                            <table class="data-grid">
-                                <colgroup>
-                                    <col>
-                                    <col>
-                                    <col style="width: 135px">
-                                    <col>
-                                    <col>
-                                    <col>
-                                    <col>
-                                    <col>
-                                    <col>
-                                </colgroup>
-                                <thead class="data-grid__head">
-                                    <tr class="data-grid__row">
-                                        <th class="data-grid__cell data-grid__cell_head">Статус </th>
-                                        <th class="data-grid__cell data-grid__cell_head">Дата заявки</th>
-                                        <th class="data-grid__cell data-grid__cell_head">Адрес</th>
-                                        <th class="data-grid__cell data-grid__cell_head">Виды деятельности</th>
-                                        <th class="data-grid__cell data-grid__cell_head">Подрядчик</th>
-                                        <th class="data-grid__cell data-grid__cell_head">Договор</th>
-                                        <th class="data-grid__cell data-grid__cell_head">Оплата</th>
-                                        <th class="data-grid__cell data-grid__cell_head"></th>
-                                    </tr>
-                                </thead>
-                                <tbody class="data-grid__item">
-                                    <tr class="data-grid__row">
-                                        <td class="data-grid__cell">
-                                            <div class="drop">
-                                                <div class="drop__trigger nowrap">
-                                                    <span class="status-icon status-icon_accepted"></span>
-                                                    <span class="text-link text-link_internal">Принят</span>
+                            <div class="data-grid-wrapper">
+                                <table class="data-grid">
+                                    <colgroup>
+                                        <col>
+                                        <col>
+                                        <col style="width: 135px">
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                    </colgroup>
+                                    <thead class="data-grid__head">
+                                        <tr class="data-grid__row">
+                                            <th class="data-grid__cell data-grid__cell_head">Статус </th>
+                                            <th class="data-grid__cell data-grid__cell_head">Дата заявки</th>
+                                            <th class="data-grid__cell data-grid__cell_head">Адрес</th>
+                                            <th class="data-grid__cell data-grid__cell_head">Виды деятельности</th>
+                                            <th class="data-grid__cell data-grid__cell_head">Подрядчик</th>
+                                            <th class="data-grid__cell data-grid__cell_head">Договор</th>
+                                            <th class="data-grid__cell data-grid__cell_head">Оплата</th>
+                                            <th class="data-grid__cell data-grid__cell_head"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="data-grid__item">
+                                        <tr class="data-grid__row">
+                                            <td class="data-grid__cell">
+                                                <div class="drop">
+                                                    <div class="drop__trigger nowrap">
+                                                        <span class="status-icon status-icon_accepted"></span>
+                                                        <span class="text-link text-link_internal">Принят</span>
+                                                    </div>
+                                                    <div class="drop__content">
+                                                        <ul class="status-list">
+                                                            <li class="status-list__item">
+                                                                <a class="status-list__link" href="javascript:void(0)">
+                                                                    <span class="status-icon status-icon_accepted"></span>
+                                                                    Принят
+                                                                </a>
+                                                            </li>
+                                                            <li class="status-list__item">
+                                                                <a class="status-list__link" href="javascript:void(0)">
+                                                                    <span class="status-icon status-icon_processed"></span>
+                                                                    Обработан
+                                                                </a>
+                                                            </li>
+                                                            <li class="status-list__item">
+                                                                <a class="status-list__link" href="javascript:void(0)">
+                                                                    <span class="status-icon status-icon_done"></span>
+                                                                    Выполнен
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
-                                                <div class="drop__content">
-                                                    <ul class="status-list">
-                                                        <li class="status-list__item">
-                                                            <a class="status-list__link" href="javascript:void(0)">
-                                                                <span class="status-icon status-icon_accepted"></span>
-                                                                Принят
-                                                            </a>
-                                                        </li>
-                                                        <li class="status-list__item">
-                                                            <a class="status-list__link" href="javascript:void(0)">
-                                                                <span class="status-icon status-icon_processed"></span>
-                                                                Обработан
-                                                            </a>
-                                                        </li>
-                                                        <li class="status-list__item">
-                                                            <a class="status-list__link" href="javascript:void(0)">
-                                                                <span class="status-icon status-icon_done"></span>
-                                                                Выполнен
-                                                            </a>
-                                                        </li>
-                                                    </ul>
+                                            </td>
+                                            <td class="data-grid__cell">12.07.2017</td>
+                                            <td class="data-grid__cell">Комсомольский пр. 70, кв.53</td>
+                                            <td class="data-grid__cell">
+                                                <div class="drop">
+                                                    <div class="drop__trigger">
+                                                        <ul class="tags">
+                                                            <li class="tags__item tag">монтаж окон</li>
+                                                            <li class="tags__item tag">покраска стен</li>
+                                                            <li class="tags__item tag">штукатурка стен</li>
+                                                            <li class="tags__item tag">монтаж стяжки поля</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="drop__content">
+                                                       <div style="padding: 50px"></div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <td class="data-grid__cell">12.07.2017</td>
-                                        <td class="data-grid__cell">Комсомольский пр. 70, кв.53</td>
-                                        <td class="data-grid__cell">
-                                            <div class="drop">
-                                                <div class="drop__trigger">
-                                                    <ul class="tags">
-                                                        <li class="tags__item tag">монтаж окон</li>
-                                                        <li class="tags__item tag">покраска стен</li>
-                                                        <li class="tags__item tag">штукатурка стен</li>
-                                                        <li class="tags__item tag">монтаж стяжки поля</li>
-                                                    </ul>
+                                            </td>
+                                            <td class="data-grid__cell">
+                                                <div class="user">
+                                                    <img class="user__img" src="img/avatar.jpg">
+                                                    <span class="user__content">
+                                                        <span class="text-link nowrap">Константин Константинович</span>
+                                                    </span>
                                                 </div>
-                                                <div class="drop__content">
-                                                   <div style="padding: 50px"></div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="data-grid__cell">
-                                            <div class="user">
-                                                <img class="user__img" src="img/avatar.jpg">
-                                                <span class="user__content">
-                                                    <span class="text-link nowrap">Константин Константинович</span>
-                                                </span>
-                                            </div>
-                                        </td>
-                                        <td class="data-grid__cell">
-                                            <div>№ 130</div>
-                                            <div>12.07.2017</div>
-                                        </td>
-                                        <td class="data-grid__cell">
-                                            <div>2 345 <span class="icon-ruble"></span></div>
-                                            <div class="drop drop_pos_right">
-                                                <div class="drop__trigger nowrap">
-                                                    <span class="text-link text-link_internal">Оплатить</span>
-                                                </div>
-                                                <div class="drop__content">
-                                                    <form class="paymant-form">
-                                                        <div class="paymant-form__cell">
-                                                            Хочу оплатить
-                                                        </div>
-                                                        <div class="paymant-form__cell">
-                                                            <div class="form-field paymant-form__form-field">
-                                                                <input class="form-field__control paymant-form__input" type="" name="">
+                                            </td>
+                                            <td class="data-grid__cell">
+                                                <div>№ 130</div>
+                                                <div>12.07.2017</div>
+                                            </td>
+                                            <td class="data-grid__cell">
+                                                <div>2 345 <span class="icon-ruble"></span></div>
+                                                <div class="drop drop_pos_right">
+                                                    <div class="drop__trigger nowrap">
+                                                        <span class="text-link text-link_internal">Оплатить</span>
+                                                    </div>
+                                                    <div class="drop__content">
+                                                        <form class="paymant-form">
+                                                            <div class="paymant-form__cell">
+                                                                Хочу оплатить
                                                             </div>
-                                                        </div>
-                                                        <div class="paymant-form__cell">
-                                                            <button class="button button_size_s" type="submit">
-                                                                <span class="button__text">Перейти к оплате</span>
-                                                            </button>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </td>
-                                         <td class="data-grid__cell">
-                                            <button class="data-grid__toggle-btn" type="button"></button>
-                                        </td>
-                                    </tr>
-                                    <tr class="data-grid__row_child">
-                                        <td class="data-grid__cell" colspan="3">
-                                            <h4>Монтаж окон</h4>
-                                        </td>
-                                        <td class="data-grid__cell" colspan="2">
-                                            <div class="project-time">
-                                                <div class="project-time__start">12 сентября 2017</div>
-                                                <div class="project-time__end">30 октября 2017</div>
-                                                <div class="project-time__progress">
-                                                    <div class="progress">
-                                                        <div class="progress__value" style="width: 30%"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="data-grid__cell" colspan="4"></td>
-                                    </tr>
-                                    <tr class="data-grid__row_child">
-                                        <td class="data-grid__cell" colspan="3">
-                                            <h4>Монтаж финишного самовыравнивающегося слоя</h4>
-                                        </td>
-                                        <td class="data-grid__cell" colspan="2">
-                                            <div class="project-time">
-                                                <div class="project-time__start">12 сентября 2017</div>
-                                                <div class="project-time__end">30 октября 2017</div>
-                                                <div class="project-time__progress">
-                                                    <div class="progress">
-                                                        <div class="progress__value" style="width: 30%"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="data-grid__cell" colspan="4"></td>
-                                    </tr>
-                                </tbody>
-                                <tbody class="data-grid__item">
-                                    <tr class="data-grid__row">
-                                        <td class="data-grid__cell">
-                                            <div class="drop">
-                                                <div class="drop__trigger nowrap">
-                                                    <span class="status-icon status-icon_accepted"></span>
-                                                    <span class="text-link text-link_internal">Принят</span>
-                                                </div>
-                                                <div class="drop__content">
-                                                    <ul class="status-list">
-                                                        <li class="status-list__item">
-                                                            <a class="status-list__link" href="javascript:void(0)">
-                                                                <span class="status-icon status-icon_accepted"></span>
-                                                                Принят
-                                                            </a>
-                                                        </li>
-                                                        <li class="status-list__item">
-                                                            <a class="status-list__link" href="javascript:void(0)">
-                                                                <span class="status-icon status-icon_processed"></span>
-                                                                Обработан
-                                                            </a>
-                                                        </li>
-                                                        <li class="status-list__item">
-                                                            <a class="status-list__link" href="javascript:void(0)">
-                                                                <span class="status-icon status-icon_done"></span>
-                                                                Выполнен
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="data-grid__cell">12.07.2017</td>
-                                        <td class="data-grid__cell">Комсомольский пр. 70, кв.53</td>
-                                        <td class="data-grid__cell">
-                                            <div class="drop">
-                                                <div class="drop__trigger">
-                                                    <ul class="tags">
-                                                        <li class="tags__item tag">монтаж окон</li>
-                                                        <li class="tags__item tag">покраска стен</li>
-                                                        <li class="tags__item tag">штукатурка стен</li>
-                                                        <li class="tags__item tag">монтаж стяжки поля</li>
-                                                    </ul>
-                                                </div>
-                                                <div class="drop__content">
-                                                   <div style="padding: 50px"></div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="data-grid__cell">
-                                            <div class="user">
-                                                <img class="user__img" src="img/avatar.jpg">
-                                                <span class="user__content">
-                                                    <span class="text-link nowrap">Константин Константинович</span>
-                                                </span>
-                                            </div>
-                                        </td>
-                                        <td class="data-grid__cell">
-                                            <div>№ 130</div>
-                                            <div>12.07.2017</div>
-                                        </td>
-                                        <td class="data-grid__cell">
-                                            <div>2 345 <span class="icon-ruble"></span></div>
-                                            <div class="drop drop_pos_right">
-                                                <div class="drop__trigger nowrap">
-                                                    <span class="text-link text-link_internal">Оплатить</span>
-                                                </div>
-                                                <div class="drop__content">
-                                                    <form class="paymant-form">
-                                                        <div class="paymant-form__cell">
-                                                            Хочу оплатить
-                                                        </div>
-                                                        <div class="paymant-form__cell">
-                                                            <div class="form-field paymant-form__form-field">
-                                                                <input class="form-field__control paymant-form__input" type="" name="">
+                                                            <div class="paymant-form__cell">
+                                                                <div class="form-field paymant-form__form-field">
+                                                                    <input class="form-field__control paymant-form__input" type="" name="">
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="paymant-form__cell">
-                                                            <button class="button button_size_s" type="submit">
-                                                                <span class="button__text">Перейти к оплате</span>
-                                                            </button>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </td>
-                                         <td class="data-grid__cell">
-                                            <button class="data-grid__toggle-btn" type="button"></button>
-                                        </td>
-                                    </tr>
-                                    <tr class="data-grid__row_child">
-                                        <td class="data-grid__cell" colspan="3">
-                                            <h4>Монтаж окон</h4>
-                                        </td>
-                                        <td class="data-grid__cell" colspan="2">
-                                            <div class="project-time">
-                                                <div class="project-time__start">12 сентября 2017</div>
-                                                <div class="project-time__end">30 октября 2017</div>
-                                                <div class="project-time__progress">
-                                                    <div class="progress">
-                                                        <div class="progress__value" style="width: 30%"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="data-grid__cell" colspan="4"></td>
-                                    </tr>
-                                    <tr class="data-grid__row_child">
-                                        <td class="data-grid__cell" colspan="3">
-                                            <h4>Монтаж финишного самовыравнивающегося слоя</h4>
-                                        </td>
-                                        <td class="data-grid__cell" colspan="2">
-                                            <div class="project-time">
-                                                <div class="project-time__start">12 сентября 2017</div>
-                                                <div class="project-time__end">30 октября 2017</div>
-                                                <div class="project-time__progress">
-                                                    <div class="progress">
-                                                        <div class="progress__value" style="width: 30%"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="data-grid__cell" colspan="4"></td>
-                                    </tr>
-                                </tbody>
-                                <tbody class="data-grid__item">
-                                    <tr class="data-grid__row">
-                                        <td class="data-grid__cell">
-                                            <div class="drop">
-                                                <div class="drop__trigger nowrap">
-                                                    <span class="status-icon status-icon_accepted"></span>
-                                                    <span class="text-link text-link_internal">Принят</span>
-                                                </div>
-                                                <div class="drop__content">
-                                                    <ul class="status-list">
-                                                        <li class="status-list__item">
-                                                            <a class="status-list__link" href="javascript:void(0)">
-                                                                <span class="status-icon status-icon_accepted"></span>
-                                                                Принят
-                                                            </a>
-                                                        </li>
-                                                        <li class="status-list__item">
-                                                            <a class="status-list__link" href="javascript:void(0)">
-                                                                <span class="status-icon status-icon_processed"></span>
-                                                                Обработан
-                                                            </a>
-                                                        </li>
-                                                        <li class="status-list__item">
-                                                            <a class="status-list__link" href="javascript:void(0)">
-                                                                <span class="status-icon status-icon_done"></span>
-                                                                Выполнен
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="data-grid__cell">12.07.2017</td>
-                                        <td class="data-grid__cell">Комсомольский пр. 70, кв.53</td>
-                                        <td class="data-grid__cell">
-                                            <div class="drop">
-                                                <div class="drop__trigger">
-                                                    <ul class="tags">
-                                                        <li class="tags__item tag">монтаж окон</li>
-                                                        <li class="tags__item tag">покраска стен</li>
-                                                        <li class="tags__item tag">штукатурка стен</li>
-                                                        <li class="tags__item tag">монтаж стяжки поля</li>
-                                                    </ul>
-                                                </div>
-                                                <div class="drop__content">
-                                                   <div style="padding: 50px"></div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="data-grid__cell">
-                                            <div class="user">
-                                                <img class="user__img" src="img/avatar.jpg">
-                                                <span class="user__content">
-                                                    <span class="text-link nowrap">Константин Константинович</span>
-                                                </span>
-                                            </div>
-                                        </td>
-                                        <td class="data-grid__cell">
-                                            <div>№ 130</div>
-                                            <div>12.07.2017</div>
-                                        </td>
-                                        <td class="data-grid__cell">
-                                            <div>2 345 <span class="icon-ruble"></span></div>
-                                            <div class="drop drop_pos_right">
-                                                <div class="drop__trigger nowrap">
-                                                    <span class="text-link text-link_internal">Оплатить</span>
-                                                </div>
-                                                <div class="drop__content">
-                                                    <form class="paymant-form">
-                                                        <div class="paymant-form__cell">
-                                                            Хочу оплатить
-                                                        </div>
-                                                        <div class="paymant-form__cell">
-                                                            <div class="form-field paymant-form__form-field">
-                                                                <input class="form-field__control paymant-form__input" type="" name="">
+                                                            <div class="paymant-form__cell">
+                                                                <button class="button button_size_s" type="submit">
+                                                                    <span class="button__text">Перейти к оплате</span>
+                                                                </button>
                                                             </div>
-                                                        </div>
-                                                        <div class="paymant-form__cell">
-                                                            <button class="button button_size_s" type="submit">
-                                                                <span class="button__text">Перейти к оплате</span>
-                                                            </button>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </td>
-                                         <td class="data-grid__cell">
-                                            <button class="data-grid__toggle-btn" type="button"></button>
-                                        </td>
-                                    </tr>
-                                    <tr class="data-grid__row_child">
-                                        <td class="data-grid__cell" colspan="3">
-                                            <h4>Монтаж окон</h4>
-                                        </td>
-                                        <td class="data-grid__cell" colspan="2">
-                                            <div class="project-time">
-                                                <div class="project-time__start">12 сентября 2017</div>
-                                                <div class="project-time__end">30 октября 2017</div>
-                                                <div class="project-time__progress">
-                                                    <div class="progress">
-                                                        <div class="progress__value" style="width: 30%"></div>
+                                                        </form>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <td class="data-grid__cell" colspan="4"></td>
-                                    </tr>
-                                    <tr class="data-grid__row_child">
-                                        <td class="data-grid__cell" colspan="3">
-                                            <h4>Монтаж финишного самовыравнивающегося слоя</h4>
-                                        </td>
-                                        <td class="data-grid__cell" colspan="2">
-                                            <div class="project-time">
-                                                <div class="project-time__start">12 сентября 2017</div>
-                                                <div class="project-time__end">30 октября 2017</div>
-                                                <div class="project-time__progress">
-                                                    <div class="progress">
-                                                        <div class="progress__value" style="width: 30%"></div>
+                                            </td>
+                                             <td class="data-grid__cell">
+                                                <button class="data-grid__toggle-btn" type="button"></button>
+                                            </td>
+                                        </tr>
+                                        <tr class="data-grid__row_child">
+                                            <td class="data-grid__cell" colspan="3">
+                                                <h4>Монтаж окон</h4>
+                                            </td>
+                                            <td class="data-grid__cell" colspan="2">
+                                                <div class="project-time">
+                                                    <div class="project-time__start">12 сентября 2017</div>
+                                                    <div class="project-time__end">30 октября 2017</div>
+                                                    <div class="project-time__progress">
+                                                        <div class="progress">
+                                                            <div class="progress__value" style="width: 30%"></div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <td class="data-grid__cell" colspan="4"></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                            </td>
+                                            <td class="data-grid__cell" colspan="4"></td>
+                                        </tr>
+                                        <tr class="data-grid__row_child">
+                                            <td class="data-grid__cell" colspan="3">
+                                                <h4>Монтаж финишного самовыравнивающегося слоя</h4>
+                                            </td>
+                                            <td class="data-grid__cell" colspan="2">
+                                                <div class="project-time">
+                                                    <div class="project-time__start">12 сентября 2017</div>
+                                                    <div class="project-time__end">30 октября 2017</div>
+                                                    <div class="project-time__progress">
+                                                        <div class="progress">
+                                                            <div class="progress__value" style="width: 30%"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="data-grid__cell" colspan="4"></td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody class="data-grid__item">
+                                        <tr class="data-grid__row">
+                                            <td class="data-grid__cell">
+                                                <div class="drop">
+                                                    <div class="drop__trigger nowrap">
+                                                        <span class="status-icon status-icon_accepted"></span>
+                                                        <span class="text-link text-link_internal">Принят</span>
+                                                    </div>
+                                                    <div class="drop__content">
+                                                        <ul class="status-list">
+                                                            <li class="status-list__item">
+                                                                <a class="status-list__link" href="javascript:void(0)">
+                                                                    <span class="status-icon status-icon_accepted"></span>
+                                                                    Принят
+                                                                </a>
+                                                            </li>
+                                                            <li class="status-list__item">
+                                                                <a class="status-list__link" href="javascript:void(0)">
+                                                                    <span class="status-icon status-icon_processed"></span>
+                                                                    Обработан
+                                                                </a>
+                                                            </li>
+                                                            <li class="status-list__item">
+                                                                <a class="status-list__link" href="javascript:void(0)">
+                                                                    <span class="status-icon status-icon_done"></span>
+                                                                    Выполнен
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="data-grid__cell">12.07.2017</td>
+                                            <td class="data-grid__cell">Комсомольский пр. 70, кв.53</td>
+                                            <td class="data-grid__cell">
+                                                <div class="drop">
+                                                    <div class="drop__trigger">
+                                                        <ul class="tags">
+                                                            <li class="tags__item tag">монтаж окон</li>
+                                                            <li class="tags__item tag">покраска стен</li>
+                                                            <li class="tags__item tag">штукатурка стен</li>
+                                                            <li class="tags__item tag">монтаж стяжки поля</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="drop__content">
+                                                       <div style="padding: 50px"></div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="data-grid__cell">
+                                                <div class="user">
+                                                    <img class="user__img" src="img/avatar.jpg">
+                                                    <span class="user__content">
+                                                        <span class="text-link nowrap">Константин Константинович</span>
+                                                    </span>
+                                                </div>
+                                            </td>
+                                            <td class="data-grid__cell">
+                                                <div>№ 130</div>
+                                                <div>12.07.2017</div>
+                                            </td>
+                                            <td class="data-grid__cell">
+                                                <div>2 345 <span class="icon-ruble"></span></div>
+                                                <div class="drop drop_pos_right">
+                                                    <div class="drop__trigger nowrap">
+                                                        <span class="text-link text-link_internal">Оплатить</span>
+                                                    </div>
+                                                    <div class="drop__content">
+                                                        <form class="paymant-form">
+                                                            <div class="paymant-form__cell">
+                                                                Хочу оплатить
+                                                            </div>
+                                                            <div class="paymant-form__cell">
+                                                                <div class="form-field paymant-form__form-field">
+                                                                    <input class="form-field__control paymant-form__input" type="" name="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="paymant-form__cell">
+                                                                <button class="button button_size_s" type="submit">
+                                                                    <span class="button__text">Перейти к оплате</span>
+                                                                </button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                             <td class="data-grid__cell">
+                                                <button class="data-grid__toggle-btn" type="button"></button>
+                                            </td>
+                                        </tr>
+                                        <tr class="data-grid__row_child">
+                                            <td class="data-grid__cell" colspan="3">
+                                                <h4>Монтаж окон</h4>
+                                            </td>
+                                            <td class="data-grid__cell" colspan="2">
+                                                <div class="project-time">
+                                                    <div class="project-time__start">12 сентября 2017</div>
+                                                    <div class="project-time__end">30 октября 2017</div>
+                                                    <div class="project-time__progress">
+                                                        <div class="progress">
+                                                            <div class="progress__value" style="width: 30%"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="data-grid__cell" colspan="4"></td>
+                                        </tr>
+                                        <tr class="data-grid__row_child">
+                                            <td class="data-grid__cell" colspan="3">
+                                                <h4>Монтаж финишного самовыравнивающегося слоя</h4>
+                                            </td>
+                                            <td class="data-grid__cell" colspan="2">
+                                                <div class="project-time">
+                                                    <div class="project-time__start">12 сентября 2017</div>
+                                                    <div class="project-time__end">30 октября 2017</div>
+                                                    <div class="project-time__progress">
+                                                        <div class="progress">
+                                                            <div class="progress__value" style="width: 30%"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="data-grid__cell" colspan="4"></td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody class="data-grid__item">
+                                        <tr class="data-grid__row">
+                                            <td class="data-grid__cell">
+                                                <div class="drop">
+                                                    <div class="drop__trigger nowrap">
+                                                        <span class="status-icon status-icon_accepted"></span>
+                                                        <span class="text-link text-link_internal">Принят</span>
+                                                    </div>
+                                                    <div class="drop__content">
+                                                        <ul class="status-list">
+                                                            <li class="status-list__item">
+                                                                <a class="status-list__link" href="javascript:void(0)">
+                                                                    <span class="status-icon status-icon_accepted"></span>
+                                                                    Принят
+                                                                </a>
+                                                            </li>
+                                                            <li class="status-list__item">
+                                                                <a class="status-list__link" href="javascript:void(0)">
+                                                                    <span class="status-icon status-icon_processed"></span>
+                                                                    Обработан
+                                                                </a>
+                                                            </li>
+                                                            <li class="status-list__item">
+                                                                <a class="status-list__link" href="javascript:void(0)">
+                                                                    <span class="status-icon status-icon_done"></span>
+                                                                    Выполнен
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="data-grid__cell">12.07.2017</td>
+                                            <td class="data-grid__cell">Комсомольский пр. 70, кв.53</td>
+                                            <td class="data-grid__cell">
+                                                <div class="drop">
+                                                    <div class="drop__trigger">
+                                                        <ul class="tags">
+                                                            <li class="tags__item tag">монтаж окон</li>
+                                                            <li class="tags__item tag">покраска стен</li>
+                                                            <li class="tags__item tag">штукатурка стен</li>
+                                                            <li class="tags__item tag">монтаж стяжки поля</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="drop__content">
+                                                       <div style="padding: 50px"></div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="data-grid__cell">
+                                                <div class="user">
+                                                    <img class="user__img" src="img/avatar.jpg">
+                                                    <span class="user__content">
+                                                        <span class="text-link nowrap">Константин Константинович</span>
+                                                    </span>
+                                                </div>
+                                            </td>
+                                            <td class="data-grid__cell">
+                                                <div>№ 130</div>
+                                                <div>12.07.2017</div>
+                                            </td>
+                                            <td class="data-grid__cell">
+                                                <div>2 345 <span class="icon-ruble"></span></div>
+                                                <div class="drop drop_pos_right">
+                                                    <div class="drop__trigger nowrap">
+                                                        <span class="text-link text-link_internal">Оплатить</span>
+                                                    </div>
+                                                    <div class="drop__content">
+                                                        <form class="paymant-form">
+                                                            <div class="paymant-form__cell">
+                                                                Хочу оплатить
+                                                            </div>
+                                                            <div class="paymant-form__cell">
+                                                                <div class="form-field paymant-form__form-field">
+                                                                    <input class="form-field__control paymant-form__input" type="" name="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="paymant-form__cell">
+                                                                <button class="button button_size_s" type="submit">
+                                                                    <span class="button__text">Перейти к оплате</span>
+                                                                </button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                             <td class="data-grid__cell">
+                                                <button class="data-grid__toggle-btn" type="button"></button>
+                                            </td>
+                                        </tr>
+                                        <tr class="data-grid__row_child">
+                                            <td class="data-grid__cell" colspan="3">
+                                                <h4>Монтаж окон</h4>
+                                            </td>
+                                            <td class="data-grid__cell" colspan="2">
+                                                <div class="project-time">
+                                                    <div class="project-time__start">12 сентября 2017</div>
+                                                    <div class="project-time__end">30 октября 2017</div>
+                                                    <div class="project-time__progress">
+                                                        <div class="progress">
+                                                            <div class="progress__value" style="width: 30%"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="data-grid__cell" colspan="4"></td>
+                                        </tr>
+                                        <tr class="data-grid__row_child">
+                                            <td class="data-grid__cell" colspan="3">
+                                                <h4>Монтаж финишного самовыравнивающегося слоя</h4>
+                                            </td>
+                                            <td class="data-grid__cell" colspan="2">
+                                                <div class="project-time">
+                                                    <div class="project-time__start">12 сентября 2017</div>
+                                                    <div class="project-time__end">30 октября 2017</div>
+                                                    <div class="project-time__progress">
+                                                        <div class="progress">
+                                                            <div class="progress__value" style="width: 30%"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="data-grid__cell" colspan="4"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                             <!-- END data-grid -->
                         </div>
                         <!-- END projects -->

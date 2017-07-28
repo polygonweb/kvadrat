@@ -136,6 +136,7 @@
 		// });
 	})();
 
+
 	// подсветка выбранного элемента в списке сообщений
 	;(function() {
 		var $list = $('.contractors-mail-list');
@@ -147,6 +148,7 @@
 			$(target).closest('.message-preview')[action + 'Class']('message-preview_checked');
 		})
 	})();
+
 
 	// подсветка выбранного элемента в списке предложений
 	;(function() {
@@ -160,6 +162,7 @@
 		})
 	})();
 
+
 	// соврачивание блоков в таблицах
 	(function() {
 		if (!$('.data-grid__toggle-btn').length) return;
@@ -169,6 +172,94 @@
 				.closest('.data-grid__item')
 				.toggleClass('data-grid__item_close');
 		});
+	})();
+
+
+	// слайдер для галереи
+	(function() {
+		function GallerySlider(rootElement) {
+			var self = this;
+			this.root = rootElement;
+			this.$root = $(this.root);
+			this.$track = this.$root.find('.profile-image-gallery__track');
+			this.$slides = this.$root.find('.profile-image-gallery__item');
+			this.len = this.$slides.length;
+			this.$nav = this.$root.find('.media-nav');
+			this.$navItems = this.$nav.find('.media-nav__item');
+
+			['goTo', 'onNavClickHandler', 'onResizeHandler'].forEach(function(method) {
+				self[method] = self[method].bind(self);
+			});
+
+			this.mq = window.matchMedia(GallerySlider.breakPoint);
+			this.mq.addListener(this.onResizeHandler);
+
+			this.onResizeHandler();
+		}
+
+		GallerySlider.prototype.init = function() {
+			this.$root.removeClass('profile-image-gallery_fallback');
+			this.setSize();
+			this.bindEvents();
+		};
+
+		GallerySlider.prototype.destroy = function() {
+			this.$root.addClass('profile-image-gallery_fallback');
+			this.unSetSize();
+			this.unBindEvents();
+		}
+
+		GallerySlider.prototype.setSize = function() {
+			this.$track.css('width', this.len * 100 + '%');
+			this.$slides.css('width', 100 / this.len + '%');
+		};
+
+		GallerySlider.prototype.unSetSize = function() {
+			this.$track.get(0).style = '';
+			this.$slides.css('width', '');
+		};
+
+		GallerySlider.prototype.bindEvents = function() {
+			var self = this;
+			this.$nav.on('click', this.onNavClickHandler);
+		};
+
+		GallerySlider.prototype.unBindEvents = function() {
+			var self = this;
+			this.$nav.off('click', this.onNavClickHandler);
+		};
+
+		GallerySlider.prototype.onNavClickHandler = function(e) {
+			var self = this;
+			var $item = $(e.target).closest('.media-nav__item');
+			if (!$item.length) return;
+			var index = $item.index();
+
+			self.goTo(index);
+			self.$navItems.removeClass('media-nav__item_active');
+			$item.addClass('media-nav__item_active');
+		};
+
+		GallerySlider.prototype.goTo = function(index) {
+			this.$track.css({
+				'-ms-transform': 'translateX(' + (-index / this.len * 100)+ '%)',
+				    'transform': 'translateX(' + (-index / this.len * 100)+ '%)'
+			})
+		};
+
+		GallerySlider.prototype.onResizeHandler = function() {
+			var self = this;
+			var method = self.mq.matches ? 'destroy' : 'init';
+			typeof self[method] === 'function' && self[method]();
+		};
+
+		GallerySlider.breakPoint = '(max-width: 768px)';
+
+
+		var galleryRoot = document.querySelector('.profile-image-gallery');
+		if (galleryRoot) {
+			new GallerySlider(galleryRoot);
+		}
 	})();
 
 })(jQuery);
