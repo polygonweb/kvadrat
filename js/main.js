@@ -262,4 +262,23 @@
 		}
 	})();
 
+
+	// числовые поля ввода
+	(function() {
+		var step = 1;
+		var min = 0;
+
+		function normalize(value, step) {
+			var value = parseInt(value || 0) + step;
+			return value < min ? min : value;
+		}
+
+		$(document).on('click', '.number-spinner__btn', function(e) {
+			var $btn = $(this);
+			var sign = $btn.hasClass('number-spinner__btn_inc') ? 1 : -1;
+			var $input = $btn.closest('.number-spinner').find('input');
+			$input.val(normalize($input.val(), sign * step));
+		})
+	})()
+
 })(jQuery);

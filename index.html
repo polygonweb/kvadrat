@@ -20,7 +20,13 @@
                 left: 50%;
                 transform: translate(-50%, -50%);
                 coounter-reset: page-counter;
+                display: flex;
             }
+
+                .nav-list__col {
+                    padding: 0 2em;
+                    flex: 0 0 auto;
+                }
 
                 .nav-list__title {
                     line-height: 1;
@@ -57,19 +63,26 @@
 <body>
 
     <div class="nav-list">
-        <h2 class="nav-list__title">Страницы</h2>
+        <div class="nav-list__col">
+            <h2 class="nav-list__title">Страницы для клиента</h2>
 
-        <a target="_blank" href="landing.html">Домашняя (лендинг)</a>
-        <a target="_blank" href="settings.html">Настройки</a>
-        <a target="_blank" href="contacts.html">Связаться с нами (список сообщений)</a>
-        <a target="_blank" href="contacts-form.html">Связаться с нами (форма отправки)</a>
-        <a target="_blank" href="contractors-list.html">Подрядчики. Список подрядчиков</a>
-        <a target="_blank" href="contractor-profile.html">Подрядчики. Профиль подрядчика</a>
-        <a target="_blank" href="contractors.html">Подрядчики. Список сообщений</a>
-        <a target="_blank" href="contractors-message-single.html">Подрядчики. Просмотр сообщения</a>
-        <a target="_blank" href="contractors-new-message.html">Подрядчики. Новое сообщение</a>
-        <a target="_blank" href="projects-and-orders.html">Заявки и проекты</a>
-        <a target="_blank" href="proposals.html">Предложения по заявке</a>
+            <a target="_blank" href="landing.html">Домашняя (лендинг)</a>
+            <a target="_blank" href="settings.html">Настройки</a>
+            <a target="_blank" href="contacts.html">Связаться с нами (список сообщений)</a>
+            <a target="_blank" href="contacts-form.html">Связаться с нами (форма отправки)</a>
+            <a target="_blank" href="contractors-list.html">Подрядчики. Список подрядчиков</a>
+            <a target="_blank" href="contractor-profile.html">Подрядчики. Профиль подрядчика</a>
+            <a target="_blank" href="contractors.html">Подрядчики. Список сообщений</a>
+            <a target="_blank" href="contractors-message-single.html">Подрядчики. Просмотр сообщения</a>
+            <a target="_blank" href="contractors-new-message.html">Подрядчики. Новое сообщение</a>
+            <a target="_blank" href="projects-and-orders.html">Заявки и проекты</a>
+            <a target="_blank" href="proposals.html">Предложения по заявке</a>
+        </div>
+        <div class="nav-list__col">
+            <h2 class="nav-list__title">Страницы для подрядчика</h2>
+
+            <a target="_blank" href="contractor-projects.html">Заявки и проекты</a>
+        </div>
     </div>
 </body>
 </html>
