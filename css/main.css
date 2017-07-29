@@ -427,6 +427,26 @@ html {
             background-color: #f7bebf;
         }
 
+    .form-field_size_s {}
+
+        .form-field_size_s .form-field__control {
+            height: 31px;
+        }
+
+    .form-field_paymant::after {
+        content: "\20BD";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        right: 8px;
+        margin-top: 1px;
+        font-size: 22px;
+        line-height: 31px;
+        pointer-events: none;
+        color: #dbdbdb;
+    }
+
 /**
  * Поле ввода для чисел
  */
@@ -549,10 +569,12 @@ html {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         padding: 12px;
-        height: 40px;
+        min-height: 40px;
         border: 0;
         font-size: inherit;
         line-height: 1;
+        text-align: left;
+        text-decoration: none;
         color: #18587a;
         background: 0;
         cursor: pointer;
@@ -572,9 +594,18 @@ html {
             transition: .2s;
         }
 
-        .edit-trigger:hover::before,
+        /*.edit-trigger:hover::before,
         .edit-trigger:focus::before {
             opacity: 0;
+        }*/
+
+        .edit-trigger__value {
+            position: relative;
+            vertical-align: middle;
+            background-image: linear-gradient(90deg, #d91a14 3px, transparent 0);
+            background-position: 0 100%;
+            background-repeat: repeat-x;
+            background-size: 6px 1px;
         }
 
         .edit-trigger:hover::after,
@@ -582,19 +613,11 @@ html {
             opacity: 0.8;
         }
 
-        .edit-trigger__value {
-            position: relative;
-            vertical-align: middle;
+        .edit-trigger:hover .edit-trigger__value,
+        .edit-trigger:focus .edit-trigger__value {
+            background-image: none
         }
 
-            .edit-trigger__value::after {
-                content: "";
-                position: absolute;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                border-top: 1px dashed #d91a14;
-            }
 
 
 /**
@@ -950,18 +973,16 @@ html {
     margin: 0 0 42px;
     padding: 0;
     list-style: none;
+    overflow-y: hidden;
+    overflow-x: auto;
+    white-space: nowrap;
     -webkit-box-shadow: 0 -1px #c2c2c2 inset;
             box-shadow: 0 -1px #c2c2c2 inset;
 }
 
-    .sub-nav::after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-
     .sub-nav__item {
-        float: left;
+        display: inline-block;
+        vertical-align: top;
     }
 
         .sub-nav__item:not(:last-of-type) {
@@ -1010,6 +1031,16 @@ html {
     @media (max-width: 1260px) {
         .sub-nav {
             margin-bottom: 28px;
+        }
+
+            .sub-nav__link {
+                /*font-size: 16px;*/
+            }
+    }
+
+    @media (max-width: 920px) {
+        .sub-nav__link {
+            font-size: 16px;
         }
     }
 
@@ -1784,21 +1815,17 @@ html {
 .play-btn {
     position: relative;
     display: inline-block;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    font-size: 70px;
+    box-sizing: border-box;
+    font-size: 52px;
     width: 1em;
     height: 1em;
-    border: 9px solid rgba(255, 255, 255, 0.47);
+    border: 0;
+    padding: 0;
     color: #333e50;
     background: #fff;
-    -webkit-background-clip: padding-box;
-            background-clip: padding-box;
-    -webkit-border-radius: 50%;
-            border-radius: 50%;
-    -webkit-transition: .3s cubic-bezier(0.57, 0.05, 0.22, 1.49);
-    -o-transition: .3s cubic-bezier(0.57, 0.05, 0.22, 1.49);
-    transition: .3s cubic-bezier(0.57, 0.05, 0.22, 1.49);
+    border-radius: 50%;
+    box-shadow: 0 0 0 9px rgba(255, 255, 255, 0.47);
+    transition: .2s;
     cursor: pointer;
 }
 
@@ -1820,11 +1847,7 @@ html {
     }
 
     .play-btn:hover {
-        -webkit-transform: scale(1.4);
-            -ms-transform: scale(1.4);
-                transform: scale(1.4);
-        background-color: #333e50;
-        color: #fff;
+        box-shadow: 0 0 0 9px #fff;
     }
 
 
@@ -1877,6 +1900,7 @@ html {
 
         .preview-list__del {
             position: absolute;
+            z-index: 1;
             top: 0;
             right: 0;
             -webkit-transform: translate(70%, -50%);
@@ -1944,6 +1968,89 @@ html {
                         -ms-transform: translate(50%, -50%);
                             transform: translate(50%, -50%);
                 }
+
+        .preview-gallery_cols_grid .preview-list__item,
+        .preview-gallery_cols_grid .preview-gallery__add {
+            width: calc(100% / 5 - 18px);
+        }
+
+        @media (max-width: 1200px) {
+            .preview-gallery_cols_grid .preview-list__item,
+            .preview-gallery_cols_grid .preview-gallery__add {
+                width: calc(100% / 4 - 18px);
+            }
+        }
+
+        @media (max-width: 920px) {
+            .preview-gallery_cols_grid .preview-list__item,
+            .preview-gallery_cols_grid .preview-gallery__add {
+                width: calc(100% / 3 - 18px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .preview-gallery_cols_grid .preview-list__item,
+            .preview-gallery_cols_grid .preview-gallery__add {
+                width: calc(100% / 2 - 18px);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .preview-gallery_cols_grid .preview-list__item,
+            .preview-gallery_cols_grid .preview-gallery__add {
+                width: calc(100% / 1 - 18px);
+            }
+        }
+
+
+    .preview-gallery__add {
+        margin: 0 9px 18px;
+        position: relative;
+        vertical-align: top;
+        display: inline-block;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        height: 153px;
+        font-size: 1rem;
+        font-size: 14px;
+        text-align: center;
+        color: #18587a;
+        border: 1px dashed;
+        cursor: pointer;
+    }
+
+        .preview-gallery__add::before {
+            content: "";
+            margin: 0 auto;
+            display: block;
+            background: none no-repeat 0 0;
+        }
+
+        .preview-gallery__add_photo::before {
+            width: 48px;
+            height: 50px;
+            background-image: url("../img/add-photo.png");
+        }
+
+        .preview-gallery__add_video::before {
+            width: 41px;
+            height: 43px;
+            background-image: url("../img/add-video.png");
+        }
+
+
+        .preview-gallery__add:hover {
+            background: #f8fcfe;
+        }
+
+    .preview-gallery__media {
+        display: block;
+        width: 100%;
+        height: 153px;
+    }
 
 
 .logo {
@@ -2539,22 +2646,34 @@ html {
 
         .works-data-table {
             border-collapse: collapse;
-            line-height: 1;
+            line-height: 1.25;
         }
 
             .works-data-table td {
                 padding: 9px 0;
-                vertical-align: top;
+                vertical-align: middle;
             }
 
+                .works-data-table td:not(:first-child) {
+                    padding-left: 17px;
+                }
+
                 .works-data-table td:last-child {
-                    padding-left: 200px;
+                    /*padding-left: 200px;*/
                     padding-right: 20px;
                     white-space: nowrap;
                 }
 
             .works-data-table_stripe tr:nth-child(even) {
                 background-color: #f3f3f3;
+            }
+
+            .works-data-table_full {
+                width: 100%;
+            }
+
+            .works-data-table_fix {
+                table-layout: fixed;
             }
 
         .contractor_state_close {}
@@ -3383,9 +3502,9 @@ html {
     background: #fff;
 }
 
-    .account-settings-form .field-grid__cell:first-child {
+   /* .account-settings-form .field-grid__cell:first-child {
         padding-right: 80px;
-    }
+    }*/
 
 
 /* Раздел "Связаться с нами"
@@ -4037,6 +4156,10 @@ html {
     font-size: 12px;
 }
 
+    .summary-list_center {
+        justify-content: center;
+    }
+
     .summary-list__item {
         position: relative;
         -webkit-box-sizing: border-box;
@@ -4204,18 +4327,20 @@ html {
     position: relative;
 }
 
-    .video-obj::before {
+    /*.video-obj::before {
         content: "";
         display: block;
         padding-top: 67.85%;
-    }
+    }*/
 
     .video-obj__img {
-        position: absolute;
+        width: 100%;
+        height: 153px;
+      /*  position: absolute;
         top: 0;
         left: 0;
         width: 100%;
-        height: 100%;
+        height: 100%;*/
         background: none no-repeat;
         -webkit-background-size: cover;
                 background-size: cover;
@@ -4288,6 +4413,174 @@ html {
         }
     }
 
+/**
+ * Редактирование профиля подрядчика
+ */
+
+.edit-profile-layout {
+    display: table;
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+    .edit-profile-layout__side,
+    .edit-profile-layout__main {
+        display: table-cell;
+        vertical-align: top;
+    }
+
+    .edit-profile-layout__side {
+        padding-right: 20px;
+        width: 214px;
+    }
+
+.profile-side {
+    padding: 27px 16px 0 16px;
+    background: #fff;
+}
+
+.upload-image {
+    margin: 0 auto;
+    display: block;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 0 16px;
+    width: 182px;
+    height: 182px;
+    text-align: center;
+    border-radius: 50%;
+    background: #f8fcfe;
+    cursor: pointer;
+    transition: .2s;
+}
+
+    .upload-image::before {
+        content: "";
+        margin: 52px auto 6px;
+        display: block;
+        width: 48px;
+        height: 38px;
+        background: url("../img/capture.png");
+    }
+
+    .upload-image__text {
+        line-height: 1.4;
+    }
+
+    .upload-image:hover {
+        background: #d6e5ec;
+    }
+
+.profile-meta {
+    padding: 13px 22px 13px 0;
+}
+
+
+/* Виды деятельности для плрядчика
+   ========================================================================== */
+
+.activity-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+    .activity-list__item + .activity-list__item {
+        margin-top: 9px;
+    }
+
+.activity-item {
+    background: #fff;
+}
+
+    .activity-item__head {
+        padding: 21px 16px;
+    }
+
+        .activity-item__head::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .activity-item__title {
+            margin: 0;
+            float: left;
+            padding: 10px 0 9px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .activity-item__toggle {
+            float: right;
+            position: relative;
+            -webkit-box-sizing: content-box;
+                    box-sizing: content-box;
+            padding: 0;
+            font-size: 35px;
+            width: 1em;
+            height: 1em;
+            line-height: 1em;
+            text-align: center;
+            border: 2px solid;
+            background: #fff;
+            color: #e8e8e8;
+            cursor: pointer;
+            -webkit-transition: .2s;
+            -o-transition: .2s;
+            transition: .2s;
+        }
+
+             .activity-item__toggle::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                width: 0;
+                height: 0;
+                display: inline-block;
+                border: 8px solid transparent;
+                border-bottom-color: currentColor;
+                border-top: 0;
+            }
+
+             .activity-item__toggle:hover {
+                color: #d91a14;
+            }
+
+
+    .activity-item__body {
+        padding: 16px;
+        font-size: 16px;
+        background: #f8fcfe;
+    }
+
+    .activity-item_close  .activity-item__toggle {
+        background-color: currentColor;
+    }
+
+        .activity-item_close  .activity-item__toggle::before {
+            border-bottom: 0;
+            border-top: 8px solid #fff;
+        }
+
+        .activity-item_close .activity-item__body {
+            display: none;
+        }
+
+.edit-activities {
+    margin-bottom: 40px;
+}
+
+.activity-edit-form {}
+
+    .activity-edit-form__foot {
+        padding-top: 48px;
+    }
 
 /* ==========================================================================
    CSS-утилиты

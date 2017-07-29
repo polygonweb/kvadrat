@@ -279,6 +279,19 @@
 			var $input = $btn.closest('.number-spinner').find('input');
 			$input.val(normalize($input.val(), sign * step));
 		})
-	})()
+	})();
+
+
+	// сворачивание блоков видов деятельности
+	(function() {
+		var $blocks = $('.activity-item');
+		if (!$blocks.length) return;
+
+		$(document).on('click', '.activity-item__toggle', function(e) {
+			$(this)
+				.closest('.activity-item')
+				.toggleClass('activity-item_close');
+		})
+	})();
 
 })(jQuery);

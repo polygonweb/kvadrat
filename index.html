@@ -14,17 +14,23 @@
         <link rel="stylesheet" href="css/main.css" />
 
         <style>
-            .nav-list {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                coounter-reset: page-counter;
+
+            body {
+                margin: 0;
+                height: 100vh;
+                overflow: auto;
                 display: flex;
             }
 
+            .nav-list {
+                margin: auto;
+                padding: 1em;
+                display: flex;
+                coounter-reset: page-counter;
+            }
+
                 .nav-list__col {
-                    padding: 0 2em;
+                    padding: 0 3em;
                     flex: 0 0 auto;
                 }
 
@@ -82,6 +88,7 @@
             <h2 class="nav-list__title">Страницы для подрядчика</h2>
 
             <a target="_blank" href="contractor-projects.html">Заявки и проекты</a>
+            <a target="_blank" href="contractor-settings.html">Настройки</a>
         </div>
     </div>
 </body>
