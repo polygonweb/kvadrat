@@ -976,6 +976,7 @@ html {
     overflow-y: hidden;
     overflow-x: auto;
     white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
     -webkit-box-shadow: 0 -1px #c2c2c2 inset;
             box-shadow: 0 -1px #c2c2c2 inset;
 }
@@ -2050,6 +2051,7 @@ html {
         display: block;
         width: 100%;
         height: 153px;
+        object-fit: cover;
     }
 
 
@@ -2651,7 +2653,7 @@ html {
 
             .works-data-table td {
                 padding: 9px 0;
-                vertical-align: middle;
+                vertical-align: top;
             }
 
                 .works-data-table td:not(:first-child) {
@@ -3418,6 +3420,7 @@ html {
             max-width: 100%;
             overflow-y: hidden;
             overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
             white-space: nowrap;
         }
 
@@ -4476,8 +4479,22 @@ html {
     padding: 13px 22px 13px 0;
 }
 
+@media (max-width: 980px) {
+    .edit-profile-layout,
+    .edit-profile-layout__side,
+    .edit-profile-layout__main {
+        display: block;
+    }
 
-/* Виды деятельности для плрядчика
+    .edit-profile-layout__side {
+        width: auto;
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+
+/* Виды деятельности для подрядчика
    ========================================================================== */
 
 .activity-list {
@@ -4552,7 +4569,6 @@ html {
                 color: #d91a14;
             }
 
-
     .activity-item__body {
         padding: 16px;
         font-size: 16px;
@@ -4580,6 +4596,73 @@ html {
 
     .activity-edit-form__foot {
         padding-top: 48px;
+    }
+
+@media (max-width: 920px) {
+    .activity-item__head,
+    .activity-item__body {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    .activity-item__title {
+        font-size: 16px;
+    }
+
+    .activity-item__body {
+        overflow: auto;
+        font-size: 14px;
+    }
+
+    .activity-item__toggle {
+        font-size: 30px;
+    }
+}
+
+/**
+ * Таблица видов деятельности в режиме редактирования
+ */
+.activity-works-table {}
+
+    .activity-works-table td {
+        vertical-align: middle;
+    }
+
+    @media (max-width: 780px) {
+        .activity-works-table tr {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+            .activity-works-table tr td {
+                display: block;
+                box-sizing: border-box;
+                padding-left: 16px;
+                flex: 0 0 auto;
+            }
+
+            .activity-works-table tr td:first-child {
+                padding-left: 0;
+                flex: 0 0 21px;
+            }
+
+            .activity-works-table tr td:nth-child(2) {
+                flex-grow: 9999;
+                flex-basis: calc(100% - 21px);
+                padding-top: 11px;
+            }
+
+            .activity-works-table tr td:nth-child(3) {
+                flex-basis: 100px;
+                padding-left: 38px;
+            }
+    }
+
+    @media (max-width: 420px) {
+        .activity-works-table tr td:nth-child(4) {
+            flex-basis: 100%;
+            padding-left: 38px;
+        }
     }
 
 /* ==========================================================================
