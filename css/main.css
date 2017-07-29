@@ -4665,6 +4665,93 @@ html {
         }
     }
 
+
+/**
+ * Отзывы
+ */
+.reviews-grid {}
+
+    .reviews-grid__item {
+        margin-bottom: 30px;
+    }
+
+    .reviews-grid__sizer {}
+
+    .reviews-grid__sizer,
+    .reviews-grid__item {
+        width: calc(100% / 3 - 30px);
+    }
+
+    .reviews-grid_fallback {
+        margin-left: -15px;
+        margin-right: -15px;
+        font-size: 0;
+    }
+
+    .reviews-grid_fallback .reviews-grid__item {
+        margin-left: 15px;
+        margin-right: 15px;
+        display: inline-block;
+        vertical-align: top;
+        width: calc(100% / 3 - 30px);
+    }
+
+    @media (max-width: 980px) {
+        .reviews-grid__sizer,
+        .reviews-grid__item {
+            width: calc(100% / 2 - 30px);
+        }
+
+        .reviews-grid_fallback .reviews-grid__item {
+            width: calc(100% / 2 - 30px);
+        }
+    }
+
+    @media (max-width: 680px) {
+        .reviews-grid__sizer,
+        .reviews-grid__item {
+            width: calc(100% - 30px);
+        }
+
+        .reviews-grid_fallback .reviews-grid__item {
+            width: calc(100% - 30px);
+        }
+    }
+
+.review {
+    position: relative;
+    padding: 32px;
+    font-size: 12px;
+    background-color: #fff;
+}
+
+    .review::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: -19px;
+        width: 109px;
+        height: 89px;
+        background: url("../img/quotes.png") no-repeat;
+    }
+
+    .review__author {
+        margin-bottom: 12px;
+        font-size: 12px;
+    }
+
+    .review__date {
+        color: #a0a0a0;
+    }
+
+    .review__content {
+        position: relative;
+        font-size: 14px;
+        line-height: 1.43;
+    }
+
+
+
 /* ==========================================================================
    CSS-утилиты
    ========================================================================== */

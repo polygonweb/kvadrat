@@ -294,4 +294,19 @@
 		})
 	})();
 
+
+	// сетка Masonry для отзывов
+	(function() {
+		var $grid = $('.reviews-grid');
+		if (!$grid.length) return;
+
+		var $msnry = $grid.masonry({
+			itemSelector: '.reviews-grid__item',
+			columnWidth: '.reviews-grid__sizer',
+			gutter: 30
+		});
+
+		$grid.removeClass('reviews-grid_fallback');
+	})();
+
 })(jQuery);
