@@ -965,6 +965,28 @@ html {
     padding: 35px 51px
 }
 
+@media (max-width: 800px) {
+    .modal-dialog {
+        margin-left:  20px;
+        margin-right: 40px;
+        width: calc(100% - 60px);
+    }
+}
+
+@media (max-width: 640px) {
+    .modal-title {
+        font-size: 24px;
+    }
+
+    .modal-footer .button {
+        line-height: 32px;
+    }
+
+        .modal-footer .button__text {
+            font-size: 16px;
+        }
+}
+
 
 /**
  * Навигация в виде табов
