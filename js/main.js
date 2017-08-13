@@ -256,9 +256,11 @@
 		GallerySlider.breakPoint = '(max-width: 768px)';
 
 
-		var galleryRoot = document.querySelector('.profile-image-gallery');
-		if (galleryRoot) {
-			new GallerySlider(galleryRoot);
+		var galleries = Array.prototype.slice.call(document.querySelectorAll('.profile-image-gallery'));
+		if (galleries) {
+			galleries.forEach(function(gallery) {
+				new GallerySlider(gallery);
+			});
 		}
 	})();
 
