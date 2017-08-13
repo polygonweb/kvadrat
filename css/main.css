@@ -52,6 +52,10 @@ html {
                 border-radius: 50%;
     }
 
+    .help-hint_gutter {
+        margin-bottom: 16px;
+    }
+
 
 /**
  * Центрирующий контейнер
@@ -959,6 +963,10 @@ html {
 
 .new-order-dialog {
     width: 622px;
+}
+
+.add-media-dialog {
+    width: 480px;
 }
 
 .modal-message {

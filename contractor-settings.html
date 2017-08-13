@@ -80,10 +80,10 @@
                         <li class="sub-nav__item">
                             <a class="sub-nav__link" href="#profile" data-toggle="tab">Редактирование профиля</a>
                         </li>
-                        <li class="sub-nav__item active">
+                        <li class="sub-nav__item">
                             <a class="sub-nav__link" href="#activities" data-toggle="tab">Виды деятельности</a>
                         </li>
-                        <li class="sub-nav__item">
+                        <li class="sub-nav__item active">
                             <a class="sub-nav__link" href="#video" data-toggle="tab">Видео</a>
                         </li>
                         <li class="sub-nav__item">
@@ -234,7 +234,7 @@
                             <!-- END edit-profile-layout -->
                         </div>
 
-                        <div class="sub-nav-content__pane active" id="activities">
+                        <div class="sub-nav-content__pane" id="activities">
                             <div class="edit-activities">
                                 <a class="text-link text-link_internal" href="contractor-settings-edit-activity.html">Редактировать список видов деятельности и работ</a>
                             </div>
@@ -367,10 +367,10 @@
                             </ul>
                         </div>
 
-                        <div class="sub-nav-content__pane" id="video">
+                        <div class="sub-nav-content__pane active" id="video">
                             <!-- BEGIN preview-gallery -->
                             <div class="preview-gallery preview-gallery_cols_grid">
-                                <div class="preview-gallery__add preview-gallery__add_video">
+                                <div class="preview-gallery__add preview-gallery__add_video" data-toggle="modal" data-target="#add-video">
                                     <!-- <input class="visually-hidden" type="file" name=""> -->
                                     <span class="text-link text-link_internal">Добавить видео</span>
                                 </div>
@@ -493,6 +493,74 @@
         <!-- END account-page__footer -->
     </div>
     <!-- END account-page -->
+
+
+    <!--BEGIN мод. окно выбора видео -->
+    <div id="add-video" class="modal fade in" tabindex="-1" role="dialog">
+        <div class="modal-dialog add-media-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть"></button>
+                    <h4 class="modal-title">Добавить видео</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="help-hint help-hint_gutter text-small">Вы можете указать ссылку на видео или выбрать файл у себя на компьютере или телефоне.</div>
+                    <div class="tabs">
+                        <div class="tabs-nav tabs-nav_full">
+                            <a class="tabs-nav__item tabs-nav__item_active" href="#">
+                                <span class="tabs-nav__text">Ссылка</span>
+                            </a>
+                             <a class="tabs-nav__item" href="#">
+                                <span class="tabs-nav__text">Файлы</span>
+                            </a>
+                        </div>
+                        <div class="tabs-content">
+                            <form class="tabs-content__pane tabs-content__pane_active">
+                                 <div class="field-list">
+                                    <div class="field-list__item">
+                                        <label class="form-field">
+                                            <span class="form-field__label">Ссылка на видео</span>
+                                            <input class="form-field__control" type="text" />
+                                        </label>
+                                    </div>
+                                    <div class="field-list__item">
+                                        <button class="button button_size_l" type="submit">
+                                            <span class="button__text">Добавить видео</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                            <form class="tabs-content__pane">
+                                <div class="field-list">
+                                    <div class="field-list__item">
+                                         <label class="form-field">
+                                            <input type="file" name="" class="visually-hidden">
+                                            <span class="form-field__label">
+                                                <span class="add-btn">
+                                                    <span class="text-link text-link_internal">Прикрепить файл</span>
+                                                </span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <div class="field-list__item">
+                                        <button class="button button_size_l" type="submit">
+                                            <span class="button__text">Добавить видео</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                   <!--  <button class="button button_size_xl" type="submit">
+                        <span class="button__text">Добавить видео</span>
+                    </button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END мод. окно выбора видео -->
 
 
     <!-- BEGIN scripts -->
