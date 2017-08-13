@@ -4438,6 +4438,20 @@ html {
         }
     }
 
+.testimonial-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+    .testimonial-list__item {
+        margin: 10px;
+        flex: 1 1 280px;
+    }
+
+
 /**
  * Редактирование профиля подрядчика
  */
