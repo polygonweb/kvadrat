@@ -297,7 +297,7 @@
 
 	// сетка Masonry для отзывов
 	(function() {
-		var $grid = $('.reviews-grid');
+		var $grid = $('[data-js-review-grid]');
 		if (!$grid.length) return;
 
 		var $msnry = $grid.masonry({
