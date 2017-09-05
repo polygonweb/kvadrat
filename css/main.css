@@ -153,6 +153,8 @@ html {
 
         .button_simple .button__text {
             position: relative;
+            display: inline-block;
+            line-height: 1.2;
         }
 
             .button_simple .button__text::after {
@@ -3153,7 +3155,6 @@ html {
     background: #e8e8e8;
 }
 
-    .account-page__header,
     .account-page__footer {
         display: table-row;
         height: 1px;
@@ -3162,6 +3163,7 @@ html {
 
     .account-page__header {
         line-height: 117px;
+        background: #fff;
         -webkit-box-shadow: 0 25px 29px rgba(0, 0, 0, 0.08);
                 box-shadow: 0 25px 29px rgba(0, 0, 0, 0.08);
     }
@@ -3196,7 +3198,7 @@ html {
         .account-footer__contacts > * {
             white-space: nowrap;
             display: inline-block;
-            line-height: initial;
+            line-height: 1.2;
         }
 
     .account-footer__nav {
