@@ -2017,7 +2017,7 @@ html {
         @media (max-width: 920px) {
             .preview-gallery_cols_grid .preview-list__item,
             .preview-gallery_cols_grid .preview-gallery__add {
-                width: calc(100% / 3 - 18px);
+                width: calc(33.3333% - 18px);
             }
         }
 
@@ -2849,8 +2849,7 @@ html {
         vertical-align: top;
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
-        width: -webkit-calc(100% / 3);
-        width: calc(100% / 3);
+        width: 33.3333%;
         padding: 0 7px 14px;
         font-size: 1rem;
         text-align: left;
@@ -4725,7 +4724,7 @@ html {
 
     .reviews-grid__sizer,
     .reviews-grid__item {
-        width: calc(100% / 3 - 30px);
+        width: calc(33.3333% - 30px);
     }
 
     .reviews-grid_fallback {
@@ -4739,7 +4738,7 @@ html {
         margin-right: 15px;
         display: inline-block;
         vertical-align: top;
-        width: calc(100% / 3 - 30px);
+        width: calc(33.3333% - 30px);
     }
 
     @media (max-width: 980px) {
